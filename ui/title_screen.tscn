@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bvmulltrvvj7f"]
+
+[ext_resource type="PackedScene" uid="uid://d170ehsn2fbbl" path="res://ui/button.tscn" id="1_7xhpk"]
+[ext_resource type="Script" uid="uid://dmj2olsrqohrx" path="res://ui/title_screen.gd" id="1_bor1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nddwx"]
+bg_color = Color(0.004077159, 0.004077159, 0.0033606587, 1)
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrnn"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+draw_center = false
+border_width_top = 2
+border_width_bottom = 2
+shadow_color = Color(0.66304684, 0.6630469, 0.66304684, 0.6901961)
+anti_aliasing = false
+
+[node name="TitleScreen" type="Control" unique_id=1268057368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bor1v")
+
+[node name="TopContainer" type="PanelContainer" parent="." unique_id=1699152117]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nddwx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopContainer" unique_id=692605886]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopContainer/VBoxContainer" unique_id=1632493770]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="TopContainer/VBoxContainer/HBoxContainer" unique_id=85907206]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_plrnn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=381071801]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" parent="TopContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1598607963 instance=ExtResource("1_7xhpk")]
+layout_mode = 2
+text = "Starte das Spiel"
+
+[node name="ExitButton" parent="TopContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=274197061 instance=ExtResource("1_7xhpk")]
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Exit"
+
+[node name="Footer" type="HBoxContainer" parent="TopContainer/VBoxContainer" unique_id=132340973]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TopContainer/VBoxContainer/Footer" unique_id=354322903]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 6
+
+[node name="FooterText" type="RichTextLabel" parent="TopContainer/VBoxContainer/Footer/MarginContainer" unique_id=725455686]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[font_size=12]Made with [font_size=16][color=#b00]♥[/color][/font_size] and [img=18]godot.svg[/img] for the [url href=\"https://itch.io/jam/dattel-kit-gamejam\" underline=hover tooltip=\"Open Site in Web Browser\"][rainbow freq=0.4 sat=0.3 val=0.85 speed=1.2][img=18]dattel.png[/img] [b]Dattel Jam[/b][/rainbow][/url][/font_size]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="on_click" from="TopContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/ExitButton" to="." method="on_exit_button_clicked"]
+[connection signal="meta_clicked" from="TopContainer/VBoxContainer/Footer/MarginContainer/FooterText" to="." method="_on_footer_text_meta_clicked"]

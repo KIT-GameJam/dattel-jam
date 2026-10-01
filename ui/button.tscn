@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://d170ehsn2fbbl"]
+
+[ext_resource type="Script" uid="uid://2y1vfse6vlaw" path="res://ui/button.gd" id="1_0dg7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dg7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uan0n"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.56, 0.56, 0.56, 0.24705882)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dg7g"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.56, 0.56, 0.56, 0.49019608)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6297864, 0.62978643, 0.6297864, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dmai"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.56, 0.56, 0.56, 0.24705882)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[node name="Button" type="PanelContainer" unique_id=274197061]
+custom_minimum_size = Vector2(200, 0)
+offset_right = 200.0
+offset_bottom = 23.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0dg7g")
+script = ExtResource("1_0dg7g")
+
+[node name="Button" type="Button" parent="." unique_id=1918451435]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_uan0n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0dg7g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0dmai")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0dmai")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=681655074]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="HBoxContainer" unique_id=1484524674]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=917341256]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer" unique_id=1027076771]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+text = "Ein test mit Asbest"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
