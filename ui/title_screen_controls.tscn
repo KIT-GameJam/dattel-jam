@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://pnq25m2plhcy"]
+
+[ext_resource type="PackedScene" uid="uid://d170ehsn2fbbl" path="res://ui/button.tscn" id="1_l4va8"]
+[ext_resource type="Script" uid="uid://pxh1hrhc70dr" path="res://ui/title_screen_controls.gd" id="1_uusci"]
+
+[node name="TitleScreenControls" type="VBoxContainer" unique_id=458211983]
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("1_uusci")
+
+[node name="StartButton" parent="." unique_id=274197061 instance=ExtResource("1_l4va8")]
+layout_mode = 2
+text = "Start Game"
+
+[node name="SettingsButton" parent="." unique_id=189580028 instance=ExtResource("1_l4va8")]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" parent="." unique_id=1441846093 instance=ExtResource("1_l4va8")]
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Exit"
+
+[connection signal="on_click" from="SettingsButton" to="." method="_on_settings_button_on_click"]
+[connection signal="on_click" from="ExitButton" to="." method="_on_exit_button_on_click"]

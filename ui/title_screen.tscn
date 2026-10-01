@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bvmulltrvvj7f"]
 
-[ext_resource type="PackedScene" uid="uid://d170ehsn2fbbl" path="res://ui/button.tscn" id="1_7xhpk"]
 [ext_resource type="Script" uid="uid://dmj2olsrqohrx" path="res://ui/title_screen.gd" id="1_bor1v"]
+[ext_resource type="Script" uid="uid://djsakavgyhj32" path="res://ui/wobbly_letters_effect.gd" id="2_bor1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nddwx"]
 bg_color = Color(0.004077159, 0.004077159, 0.0033606587, 1)
 corner_detail = 1
 anti_aliasing = false
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_uusci"]
+script = ExtResource("2_bor1v")
+metadata/_custom_type_script = "uid://djsakavgyhj32"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrnn"]
 content_margin_left = 25.0
@@ -19,7 +23,7 @@ border_width_bottom = 2
 shadow_color = Color(0.66304684, 0.6630469, 0.66304684, 0.6901961)
 anti_aliasing = false
 
-[node name="TitleScreen" type="Control" unique_id=1268057368]
+[node name="TitleScreen" type="Control" unique_id=1268057368 node_paths=PackedStringArray("controls_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bor1v")
+controls_container = NodePath("TopContainer/VBoxContainer/HBoxContainer/ControlsContainer")
 
 [node name="TopContainer" type="PanelContainer" parent="." unique_id=1699152117]
 layout_mode = 1
@@ -40,31 +45,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nddwx")
 [node name="VBoxContainer" type="VBoxContainer" parent="TopContainer" unique_id=692605886]
 layout_mode = 2
 
+[node name="TitleContainer" type="CenterContainer" parent="TopContainer/VBoxContainer" unique_id=321040279]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.25
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TopContainer/VBoxContainer/TitleContainer" unique_id=1891196983]
+layout_mode = 2
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[wobbly_letters][b]Unser SUPER dolles Spiel[/b][/wobbly_letters]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_uusci")]
+
 [node name="HBoxContainer" type="HBoxContainer" parent="TopContainer/VBoxContainer" unique_id=1632493770]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="TopContainer/VBoxContainer/HBoxContainer" unique_id=85907206]
+[node name="ControlsContainer" type="PanelContainer" parent="TopContainer/VBoxContainer/HBoxContainer" unique_id=85907206]
 layout_mode = 2
+size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_plrnn")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TopContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=381071801]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Button" parent="TopContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1598607963 instance=ExtResource("1_7xhpk")]
-layout_mode = 2
-text = "Starte das Spiel"
-
-[node name="ExitButton" parent="TopContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=274197061 instance=ExtResource("1_7xhpk")]
-custom_maximum_size = Vector2(100, -1)
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Exit"
 
 [node name="Footer" type="HBoxContainer" parent="TopContainer/VBoxContainer" unique_id=132340973]
 layout_mode = 2
@@ -90,5 +96,4 @@ autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[connection signal="on_click" from="TopContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/ExitButton" to="." method="on_exit_button_clicked"]
 [connection signal="meta_clicked" from="TopContainer/VBoxContainer/Footer/MarginContainer/FooterText" to="." method="_on_footer_text_meta_clicked"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d3u7r2eprr3r4"]
+
+[ext_resource type="PackedScene" uid="uid://d170ehsn2fbbl" path="res://ui/button.tscn" id="1_7hf41"]
+[ext_resource type="Script" uid="uid://r5evct4abacx" path="res://ui/settings_controls.gd" id="1_ytwsf"]
+
+[node name="SettingsControls" type="VBoxContainer" unique_id=1528948924]
+offset_right = 200.0
+offset_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+script = ExtResource("1_ytwsf")
+
+[node name="WindowModeButton" parent="." unique_id=274197061 instance=ExtResource("1_7hf41")]
+propagate_maximum_size = false
+layout_mode = 2
+text = "Window Mode: "
+
+[node name="BackButton" parent="." unique_id=1274416860 instance=ExtResource("1_7hf41")]
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Back"
+
+[connection signal="on_click" from="WindowModeButton" to="." method="_on_window_mode_button_on_click"]
+[connection signal="on_click" from="BackButton" to="." method="_on_back_button_on_click"]

@@ -79,6 +79,7 @@ mouse_filter = 2
 text = "Ein test mit Asbest"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
 shortcut_keys_enabled = false
 vertical_alignment = 1
 
