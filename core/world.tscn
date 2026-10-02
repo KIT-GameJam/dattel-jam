@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/world.gd" id="1_q7g5t"]
 [ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://core/road/road.tscn" id="3_ccd7m"]
 [ext_resource type="PackedScene" uid="uid://b5ymlu4py25pj" path="res://core/player_car.tscn" id="4_e68cy"]
+[ext_resource type="PackedScene" uid="uid://g1s6vg5w25v7" path="res://ui/overlay.tscn" id="5_wd0q5"]
 
 [sub_resource type="Animation" id="Animation_q7g5t"]
 length = 0.001
@@ -59,3 +60,5 @@ position = Vector2(136, 87)
 
 [node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("4_e68cy")]
 position = Vector2(699, 579)
+
+[node name="Overlay" parent="." unique_id=711401199 instance=ExtResource("5_wd0q5")]

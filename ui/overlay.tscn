@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://g1s6vg5w25v7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2arr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.6431373)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.5370113, 0.5370114, 0.5370111, 1)
+
+[node name="Overlay" type="CanvasLayer" unique_id=920032816]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1272906395]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1781008144]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2arr")
+text = "Round 1/∞"
