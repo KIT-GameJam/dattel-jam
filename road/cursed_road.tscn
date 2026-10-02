@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://docdh2ftahmh7"]
+
+[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://road/road.tscn" id="1_1xvum"]
+[ext_resource type="Texture2D" uid="uid://bstbq1krvcmcc" path="res://assets/cursed_road.png" id="2_g0701"]
+
+[node name="CursedRoad" unique_id=701535564 instance=ExtResource("1_1xvum")]
+texture = ExtResource("2_g0701")
+
+[node name="Sprite" parent="." index="0" unique_id=1170553723]
+texture = ExtResource("2_g0701")

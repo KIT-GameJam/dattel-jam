@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://3iwrbnnekfav"]
+
+[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://road/road.tscn" id="1_uawgc"]
+[ext_resource type="Texture2D" uid="uid://ksaeen847lkk" path="res://assets/half_curved_road.png" id="2_6dmyd"]
+
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_eb4gj"]
+segments = PackedVector2Array(-32, -14, 1, -14, 16, 31, 0, 16, -32, 16, -32, -14, 1, -14, 33, 12, 33, 12, 16, 31, 0, 16, -32, 16)
+
+[sub_resource type="Curve2D" id="Curve2D_whsfh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 20)
+}
+point_count = 3
+
+[node name="HalfCurvedRoad" unique_id=701535564 instance=ExtResource("1_uawgc")]
+texture = ExtResource("2_6dmyd")
+shape = SubResource("ConcavePolygonShape2D_eb4gj")
+curve = SubResource("Curve2D_whsfh")
+
+[node name="Sprite" parent="." index="0" unique_id=1170553723]
+texture = ExtResource("2_6dmyd")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=730288214]
+shape = SubResource("ConcavePolygonShape2D_eb4gj")
+
+[node name="Path2D" parent="." index="2" unique_id=2042994023]
+curve = SubResource("Curve2D_whsfh")

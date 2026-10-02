@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://w26tmhj13hrm" path="res://dattel.png" id="1_2q1is"]
 [ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/world.gd" id="1_q7g5t"]
-[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://road/road.tscn" id="3_ccd7m"]
 [ext_resource type="PackedScene" uid="uid://c0viw41w6fn8o" path="res://road/curved_road.tscn" id="4_e68cy"]
+[ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="4_wd0q5"]
 
 [sub_resource type="Animation" id="Animation_q7g5t"]
 length = 0.001
@@ -54,21 +54,12 @@ libraries/ = SubResource("AnimationLibrary_tpixf")
 autoplay = &"test_animation"
 speed_scale = 0.234
 
-[node name="Road" parent="." unique_id=701535564 instance=ExtResource("3_ccd7m")]
-position = Vector2(144, 56)
-
 [node name="CurvedRoad" parent="." unique_id=340501329 instance=ExtResource("4_e68cy")]
 position = Vector2(256, 56)
 
 [node name="CurvedRoad2" parent="." unique_id=2048473370 instance=ExtResource("4_e68cy")]
 position = Vector2(96, 56)
 rotation = -1.5707964
-
-[node name="Road2" parent="." unique_id=778558179 instance=ExtResource("3_ccd7m")]
-position = Vector2(208, 56)
-
-[node name="Road3" parent="." unique_id=1549109900 instance=ExtResource("3_ccd7m")]
-position = Vector2(240, 120)
 
 [node name="CurvedRoad3" parent="." unique_id=719798590 instance=ExtResource("4_e68cy")]
 position = Vector2(288, 120)
@@ -77,9 +68,6 @@ rotation = 1.5707964
 [node name="CurvedRoad4" parent="." unique_id=756347523 instance=ExtResource("4_e68cy")]
 position = Vector2(256, 87.99999)
 rotation = 3.1415925
-
-[node name="Road4" parent="." unique_id=689950444 instance=ExtResource("3_ccd7m")]
-position = Vector2(176, 120)
 
 [node name="CurvedRoad5" parent="." unique_id=595084497 instance=ExtResource("4_e68cy")]
 position = Vector2(288, 87.99999)
@@ -94,3 +82,17 @@ position = Vector2(128, 87.99999)
 [node name="CurvedRoad8" parent="." unique_id=604825028 instance=ExtResource("4_e68cy")]
 position = Vector2(96.000015, 88.00001)
 rotation = -3.1415925
+
+[node name="StraightRoad" parent="." unique_id=701535564 instance=ExtResource("4_wd0q5")]
+position = Vector2(144, 56)
+
+[node name="StraightRoad2" parent="." unique_id=1355514479 instance=ExtResource("4_wd0q5")]
+position = Vector2(208, 56)
+
+[node name="StraightRoad3" parent="." unique_id=1629255290 instance=ExtResource("4_wd0q5")]
+position = Vector2(176, 120)
+rotation = 3.1415927
+
+[node name="StraightRoad4" parent="." unique_id=1579889128 instance=ExtResource("4_wd0q5")]
+position = Vector2(240, 120)
+rotation = 3.1415927
