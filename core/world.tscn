@@ -67,7 +67,8 @@ rotation = 1.5707964
 
 [node name="CurvedRoad4" parent="." unique_id=756347523 instance=ExtResource("4_e68cy")]
 position = Vector2(256, 87.99999)
-rotation = 3.1415925
+rotation = 1.5707964
+scale = Vector2(1, -1)
 
 [node name="CurvedRoad5" parent="." unique_id=595084497 instance=ExtResource("4_e68cy")]
 position = Vector2(288, 87.99999)
@@ -78,6 +79,8 @@ rotation = -3.1415925
 
 [node name="CurvedRoad7" parent="." unique_id=290041299 instance=ExtResource("4_e68cy")]
 position = Vector2(128, 87.99999)
+rotation = 1.5707964
+scale = Vector2(-1, 1)
 
 [node name="CurvedRoad8" parent="." unique_id=604825028 instance=ExtResource("4_e68cy")]
 position = Vector2(96.000015, 88.00001)
