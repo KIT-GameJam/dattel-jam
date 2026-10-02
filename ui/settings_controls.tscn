@@ -21,6 +21,7 @@ custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Back"
+shortcut_action = "pause"
 
 [connection signal="on_click" from="WindowModeButton" to="." method="_on_window_mode_button_on_click"]
 [connection signal="on_click" from="BackButton" to="." method="_on_back_button_on_click"]

@@ -23,5 +23,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "Exit"
 
+[connection signal="on_click" from="StartButton" to="." method="_on_start_button_on_click"]
 [connection signal="on_click" from="SettingsButton" to="." method="_on_settings_button_on_click"]
 [connection signal="on_click" from="ExitButton" to="." method="_on_exit_button_on_click"]

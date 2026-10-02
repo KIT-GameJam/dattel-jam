@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://hl2ujghfrv1l"]
+
+[ext_resource type="Script" uid="uid://bvq1qjbmoa3fa" path="res://ui/pause_controls.gd" id="1_lknb5"]
+[ext_resource type="PackedScene" uid="uid://d170ehsn2fbbl" path="res://ui/button.tscn" id="2_myve8"]
+
+[node name="PauseControls" type="VBoxContainer" unique_id=1528948924]
+offset_right = 200.0
+offset_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+script = ExtResource("1_lknb5")
+
+[node name="ContinueButton" parent="." unique_id=274197061 instance=ExtResource("2_myve8")]
+propagate_maximum_size = false
+layout_mode = 2
+text = "Continue"
+shortcut_action = "pause"
+
+[node name="SettingsButton" parent="." unique_id=539578642 instance=ExtResource("2_myve8")]
+propagate_maximum_size = false
+layout_mode = 2
+text = "Settings"
+
+[node name="BackToTitleButton" parent="." unique_id=1274416860 instance=ExtResource("2_myve8")]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Quit to Title Screen"
+
+[connection signal="on_click" from="ContinueButton" to="." method="_on_continue_button_on_click"]
+[connection signal="on_click" from="SettingsButton" to="." method="_on_settings_button_on_click"]
+[connection signal="on_click" from="BackToTitleButton" to="." method="_on_back_to_title_button_on_click"]

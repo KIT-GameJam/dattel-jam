@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dmj2olsrqohrx" path="res://ui/title_screen.gd" id="1_bor1v"]
 [ext_resource type="Script" uid="uid://djsakavgyhj32" path="res://ui/wobbly_letters_effect.gd" id="2_bor1v"]
+[ext_resource type="PackedScene" uid="uid://bi8ypnscaif16" path="res://ui/controls_container.tscn" id="3_qer0c"]
+[ext_resource type="PackedScene" uid="uid://pnq25m2plhcy" path="res://ui/title_screen_controls.tscn" id="4_dk6f0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nddwx"]
 bg_color = Color(0.004077159, 0.004077159, 0.0033606587, 1)
@@ -12,18 +14,7 @@ anti_aliasing = false
 script = ExtResource("2_bor1v")
 metadata/_custom_type_script = "uid://djsakavgyhj32"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrnn"]
-content_margin_left = 25.0
-content_margin_top = 25.0
-content_margin_right = 25.0
-content_margin_bottom = 25.0
-draw_center = false
-border_width_top = 2
-border_width_bottom = 2
-shadow_color = Color(0.66304684, 0.6630469, 0.66304684, 0.6901961)
-anti_aliasing = false
-
-[node name="TitleScreen" type="Control" unique_id=1268057368 node_paths=PackedStringArray("controls_container")]
+[node name="TitleScreen" type="Control" unique_id=1268057368]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bor1v")
-controls_container = NodePath("TopContainer/VBoxContainer/HBoxContainer/ControlsContainer")
 
 [node name="TopContainer" type="PanelContainer" parent="." unique_id=1699152117]
 layout_mode = 1
@@ -66,11 +56,9 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="ControlsContainer" type="PanelContainer" parent="TopContainer/VBoxContainer/HBoxContainer" unique_id=85907206]
+[node name="ControlsContainer" parent="TopContainer/VBoxContainer/HBoxContainer" unique_id=765224759 instance=ExtResource("3_qer0c")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_plrnn")
+initial_controls_scene = ExtResource("4_dk6f0")
 
 [node name="Footer" type="HBoxContainer" parent="TopContainer/VBoxContainer" unique_id=132340973]
 layout_mode = 2

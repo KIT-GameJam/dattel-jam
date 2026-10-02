@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-var title_screen: TitleScreen = null
+var controls_container: ControlsContainer = null
 
 func _mode_name(mode: Window.Mode) -> String:
 	match mode:
@@ -21,7 +21,7 @@ func _ready() -> void:
 	_sync_mode()
 
 func _on_back_button_on_click() -> void:
-	title_screen.pop_controls()
+	controls_container.pop_controls()
 
 func _on_window_mode_button_on_click() -> void:
 	var window := get_window()
