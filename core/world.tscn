@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7xfasd5aw1sp"]
 
 [ext_resource type="Texture2D" uid="uid://w26tmhj13hrm" path="res://dattel.png" id="1_2q1is"]
-[ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/world.gd" id="1_q7g5t"]
+[ext_resource type="Script" uid="uid://dt3re3jcmjjv7" path="res://core/path_combination.gd" id="1_img2t"]
 [ext_resource type="PackedScene" uid="uid://c0viw41w6fn8o" path="res://road/curved_road.tscn" id="4_e68cy"]
 [ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="4_wd0q5"]
 [ext_resource type="PackedScene" uid="uid://g1s6vg5w25v7" path="res://ui/overlay.tscn" id="5_wd0q5"]
@@ -44,8 +44,10 @@ _data = {
 &"test_animation": SubResource("Animation_id21l")
 }
 
+[sub_resource type="Curve2D" id="Curve2D_img2t"]
+
 [node name="World" type="Node2D" unique_id=435221483]
-script = ExtResource("1_q7g5t")
+script = ExtResource("1_img2t")
 
 [node name="Dattel" type="Sprite2D" parent="." unique_id=130381872]
 position = Vector2(332, 244)
@@ -58,16 +60,14 @@ speed_scale = 0.234
 
 [node name="Overlay" parent="." unique_id=711401199 instance=ExtResource("5_wd0q5")]
 
+[node name="StraightRoad" parent="." unique_id=701535564 instance=ExtResource("4_wd0q5")]
+position = Vector2(144, 56)
+
+[node name="StraightRoad2" parent="." unique_id=1355514479 instance=ExtResource("4_wd0q5")]
+position = Vector2(208, 56)
+
 [node name="CurvedRoad" parent="." unique_id=340501329 instance=ExtResource("4_e68cy")]
 position = Vector2(256, 56)
-
-[node name="CurvedRoad2" parent="." unique_id=2048473370 instance=ExtResource("4_e68cy")]
-position = Vector2(96, 56)
-rotation = -1.5707964
-
-[node name="CurvedRoad3" parent="." unique_id=719798590 instance=ExtResource("4_e68cy")]
-position = Vector2(288, 120)
-rotation = 1.5707964
 
 [node name="CurvedRoad4" parent="." unique_id=756347523 instance=ExtResource("4_e68cy")]
 position = Vector2(256, 87.99999)
@@ -76,6 +76,18 @@ scale = Vector2(1, -1)
 
 [node name="CurvedRoad5" parent="." unique_id=595084497 instance=ExtResource("4_e68cy")]
 position = Vector2(288, 87.99999)
+
+[node name="CurvedRoad3" parent="." unique_id=719798590 instance=ExtResource("4_e68cy")]
+position = Vector2(288, 120)
+rotation = 1.5707964
+
+[node name="StraightRoad4" parent="." unique_id=1579889128 instance=ExtResource("4_wd0q5")]
+position = Vector2(240, 120)
+rotation = -3.1415925
+
+[node name="StraightRoad3" parent="." unique_id=1629255290 instance=ExtResource("4_wd0q5")]
+position = Vector2(176, 120)
+rotation = -3.1415925
 
 [node name="CurvedRoad6" parent="." unique_id=2100535810 instance=ExtResource("4_e68cy")]
 position = Vector2(128, 120)
@@ -90,19 +102,12 @@ scale = Vector2(-1, 1)
 position = Vector2(96.000015, 88.00001)
 rotation = -3.1415925
 
-[node name="StraightRoad" parent="." unique_id=701535564 instance=ExtResource("4_wd0q5")]
-position = Vector2(144, 56)
-
-[node name="StraightRoad2" parent="." unique_id=1355514479 instance=ExtResource("4_wd0q5")]
-position = Vector2(208, 56)
-
-[node name="StraightRoad3" parent="." unique_id=1629255290 instance=ExtResource("4_wd0q5")]
-position = Vector2(176, 120)
-rotation = 3.1415927
-
-[node name="StraightRoad4" parent="." unique_id=1579889128 instance=ExtResource("4_wd0q5")]
-position = Vector2(240, 120)
-rotation = 3.1415927
+[node name="CurvedRoad2" parent="." unique_id=2048473370 instance=ExtResource("4_e68cy")]
+position = Vector2(96, 56)
+rotation = -1.5707964
 
 [node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("6_img2t")]
 position = Vector2(658, 511)
+
+[node name="WalzPfad" type="Path2D" parent="." unique_id=1372904200]
+curve = SubResource("Curve2D_img2t")
