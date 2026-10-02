@@ -9,6 +9,5 @@ script = ExtResource("2_tijfq")
 [node name="Camera2D" type="Camera2D" parent="." index="2" unique_id=1496874864]
 ignore_rotation = false
 zoom = Vector2(2, 2)
-position_smoothing_enabled = true
 position_smoothing_speed = 25.0
 rotation_smoothing_enabled = true
