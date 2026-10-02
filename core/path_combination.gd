@@ -14,7 +14,7 @@ func _ready() -> void:
 			
 			walz_pfad.curve.add_point(
 				target_local_point,
-				Vector2(0, 0),
+				Vector2(0, 0), # TODO handle in and out points correctly
 				Vector2(0, 0),
 			)
 	
