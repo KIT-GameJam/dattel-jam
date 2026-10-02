@@ -1,7 +1,7 @@
 class_name Game
 extends Node
 
-const world: PackedScene = preload("res://misc/world.tscn")
+const world: PackedScene = preload("res://core/world.tscn")
 
 @onready var world_container: Node = $World
 @onready var title_screen_canvas: CanvasLayer = $TitleScreenCanvas
