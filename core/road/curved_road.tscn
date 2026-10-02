@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c0viw41w6fn8o"]
+
+[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://core/road/road.tscn" id="1_nqwgc"]
+
+[node name="Road" unique_id=701535564 instance=ExtResource("1_nqwgc")]

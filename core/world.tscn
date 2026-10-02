@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://w26tmhj13hrm" path="res://dattel.png" id="1_2q1is"]
 [ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/world.gd" id="1_q7g5t"]
+[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://core/road/road.tscn" id="3_ccd7m"]
 
 [sub_resource type="Animation" id="Animation_q7g5t"]
 length = 0.001
@@ -51,3 +52,6 @@ texture = ExtResource("1_2q1is")
 libraries/ = SubResource("AnimationLibrary_tpixf")
 autoplay = &"test_animation"
 speed_scale = 0.234
+
+[node name="Road" parent="." unique_id=701535564 instance=ExtResource("3_ccd7m")]
+position = Vector2(136, 87)

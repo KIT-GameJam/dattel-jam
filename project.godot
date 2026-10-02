@@ -68,6 +68,10 @@ pause={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Road"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
