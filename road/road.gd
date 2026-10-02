@@ -31,4 +31,10 @@ func _ready():
 		curve = val
 		if path:
 			path.curve = val
+			
+#func get_start() -> Point2D:
+#	return curve.get_point_position(0)
+#	
+#func get_end() -> Point2D:
+#	return curve.get_point_position(-1)
 	
