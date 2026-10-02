@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c0viw41w6fn8o"]
+
+[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://road/road.tscn" id="1_nqwgc"]
+[ext_resource type="Texture2D" uid="uid://cr1aapcfx8iw7" path="res://assets/curved_road.png" id="2_re8uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccd7m"]
+size = Vector2(32, 32)
+
+[sub_resource type="Curve2D" id="Curve2D_6dmyd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16)
+}
+point_count = 3
+
+[node name="CurvedRoad" unique_id=701535564 instance=ExtResource("1_nqwgc")]
+texture = ExtResource("2_re8uc")
+shape = SubResource("RectangleShape2D_ccd7m")
+curve = SubResource("Curve2D_6dmyd")
+
+[node name="Sprite" parent="." index="0" unique_id=1170553723]
+texture = ExtResource("2_re8uc")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=730288214]
+shape = SubResource("RectangleShape2D_ccd7m")
+
+[node name="Path2D" parent="." index="2" unique_id=2042994023]
+curve = SubResource("Curve2D_6dmyd")

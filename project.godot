@@ -24,6 +24,7 @@ Global="*uid://d0b674dyqhv7i"
 
 [display]
 
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
