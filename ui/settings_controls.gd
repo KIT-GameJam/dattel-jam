@@ -27,3 +27,6 @@ func _on_window_mode_button_on_click() -> void:
 	var window := get_window()
 	window.mode = _mode_next(window.mode)
 	_sync_mode()
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
