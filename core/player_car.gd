@@ -1,3 +1,4 @@
+class_name PlayerCar
 extends HistoryObject
 
 const MAX_SPEED := 85.0
@@ -42,3 +43,7 @@ func pausable_physics_process(delta: float) -> void:
 	velocity = Vector2(0, -1).rotated(rotation) * speed
 	move_and_slide()
 	write_history()
+
+func die() -> void:
+	# "sieht gut aus" - Jan
+	Global.get_level().end_round()
