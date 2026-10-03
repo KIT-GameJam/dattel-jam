@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cs073o3xu7y0u"]
+[gd_scene format=3 uid="uid://b3ykhry6s6m7d"]
 
 [ext_resource type="Shader" uid="uid://slb8bxbkx4de" path="res://core/ghost.gdshader" id="1_bus7i"]
 [ext_resource type="Script" uid="uid://dtsbdqwgado4j" path="res://core/ghost_car.gd" id="2_bus7i"]

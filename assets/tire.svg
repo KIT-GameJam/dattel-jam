@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64mm"
+   height="64mm"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="tire.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.4561361"
+     inkscape:cx="46.210795"
+     inkscape:cy="129.47165"
+     inkscape:window-width="1840"
+     inkscape:window-height="1017"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,1,1,0,7.61917,0,1 @ F,0,1,1,0,7.61917,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,7.61917,0,1 @ F,0,1,1,0,7.61917,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="stroke-width:0.291368"
+       d="m 26.61917,0 h 10.76166 c 4.207951,0 9.099028,3.1182757 9.595886,7.2255076 C 47.538061,11.865818 48,19.486098 48,32 48,44.51405 47.538051,52.134363 46.976696,56.774657 46.479839,60.881798 41.588781,64 37.38083,64 H 26.61917 C 22.411219,64 17.527009,60.877873 17.028041,56.768238 16.464551,52.127172 16,44.508012 16,32 16,19.491858 16.46456,11.87267 17.028059,7.2316179 17.527025,3.1220622 22.411219,0 26.61917,0 Z"
+       inkscape:path-effect="#path-effect1"
+       inkscape:original-d="m 19,0 h 26 c 0,0 3,0.10950256 3,32 0,31.890497 -3,32 -3,32 H 19 C 19,64 16,63.785746 16,32 16,0.21425371 19,0 19,0 Z"
+       sodipodi:nodetypes="cczcczc" />
+  </g>
+</svg>

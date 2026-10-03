@@ -6,23 +6,37 @@ const ROTATION_SPEED := 1.8
 const ACCEL := 50.0
 const SPEED_DOWN_FACTOR := 0.3
 const TURNING_MAX_SPEED_DAMP := 0.7
+const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
+const TIRE_ANGLE: float = deg_to_rad(30.0);
 
 @onready var detection_area: Area2D = $DetectionArea
+@onready var tires: Array[Sprite2D] = [$Sprite2D/Tire, $Sprite2D/Tire2]
 var speed := 0.0
 var is_turning := false
+var curr_tire_rot: int = 0
 
 func turn_left(angle: float) -> void:
 	rotation -= angle
 func turn_right(angle: float) -> void:
 	rotation += angle
 
+func rotate_tire(rot: int) -> void:
+	if curr_tire_rot == rot:
+		pass
+	curr_tire_rot = rot
+	for tire in tires:
+		tire.rotation = DEFAULT_ROTATION + rot * TIRE_ANGLE
+
 func process_input(delta: float) -> void:
 	is_turning = false
+	rotate_tire(0)
 	if Input.is_action_pressed("left"):
 		turn_left(ROTATION_SPEED * delta)
+		rotate_tire(-1)
 		is_turning = true
 	if Input.is_action_pressed("right"):
 		turn_right(ROTATION_SPEED * delta)
+		rotate_tire(1)
 		is_turning = true
 
 func pausable_physics_process(delta: float) -> void:
