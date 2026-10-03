@@ -24,7 +24,7 @@ func process_input(delta: float) -> void:
 		turn_right(ROTATION_SPEED * delta)
 		is_turning = true
 
-func _physics_process(delta: float) -> void:
+func pausable_physics_process(delta: float) -> void:
 	process_input(delta)
 	var ground_speed := 0.45
 	for area in detection_area.get_overlapping_areas():

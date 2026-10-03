@@ -18,6 +18,7 @@ const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const car_scene: PackedScene = preload("res://core/car.tscn")
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
+var is_race_started := false
 
 func _ready() -> void:
 	_reload_level()
@@ -29,6 +30,7 @@ func _process(_delta: float) -> void:
 func _reload_level() -> void:
 	if level:
 		level.queue_free()
+	is_race_started = false
 	level = level_scene.instantiate()
 	add_child(level)
 	var temp = level.get_start_position()
@@ -42,14 +44,12 @@ func _reload_level() -> void:
 		level.add_child(c)
 		c.reset_read_index()
 
-	level.process_mode = Node.PROCESS_MODE_DISABLED
-
 	ready_ui = ready_scene.instantiate()
 	add_child(ready_ui)
 
 func _start_level() -> void:
 	ready_ui.queue_free()
-	level.process_mode = Node.PROCESS_MODE_INHERIT
+	is_race_started = true
 
 func _end_level() -> void:
 	stage += 1

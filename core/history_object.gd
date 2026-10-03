@@ -17,6 +17,13 @@ func get_timestamp() -> float:
 func reset_read_index():
 	_read_index = 0
 
+func pausable_physics_process(_delta: float) -> void:
+	pass
+
+func _physics_process(delta: float) -> void:
+	if Global.get_game().is_race_started:
+		pausable_physics_process(delta)
+
 func write_history():
 	var entry: HistoryEntry = HistoryEntry.new(
 		get_timestamp(),
