@@ -1,7 +1,13 @@
 extends Node
 class_name Game
 
-var stage: int = 0
+@onready var overlay: Overlay = $Overlay
+
+var stage: int = 0:
+	set(val):
+		stage = val
+		if overlay != null:
+			overlay.sync_stage(val)
 var max_stages = 3
 
 const level_scene: PackedScene = preload("res://core/level.tscn")
