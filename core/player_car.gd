@@ -1,10 +1,10 @@
 extends HistoryObject
 
-const MAX_SPEED := 140.0
-const ROTATION_SPEED := 2.0
-const ACCEL := 72.0
+const MAX_SPEED := 85.0
+const ROTATION_SPEED := 1.8
+const ACCEL := 50.0
 const SPEED_DOWN_FACTOR := 0.3
-const TURNING_MAX_SPEED_DAMP := 0.8
+const TURNING_MAX_SPEED_DAMP := 0.7
 
 @onready var detection_area: Area2D = $DetectionArea
 var speed := 0.0
@@ -26,7 +26,7 @@ func process_input(delta: float) -> void:
 
 func pausable_physics_process(delta: float) -> void:
 	process_input(delta)
-	var ground_speed := 0.45
+	var ground_speed := 0.3
 	for area in detection_area.get_overlapping_areas():
 		if is_instance_of(area, Road):
 			ground_speed = area.drive_speed

@@ -12,5 +12,3 @@ texture = ExtResource("2_5fxt4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=940481422]
 polygon = PackedVector2Array(-32, -16, 32, -16, 32, 16, -32, 16)
-
-[node name="Path2D" type="Path2D" parent="." unique_id=2042994023]

@@ -25,31 +25,33 @@ func get_start_position() -> Vector3:
 	return Vector3(goal.global_position.x, goal.global_position.y, goal.global_rotation)
 
 func create_joined_path() -> void:
-	var path := _find_start_road().path
-	var paths: Array[Path2D] = []
-	for road: Road in find_children("*", "Road"): if road.path != path: paths.append(road.path)
+	var start_road := _find_start_road()
+	var roads: Array[Road] = []
+	for road: Road in find_children("*", "Road"):
+		if road != start_road:
+			roads.append(road)
 
-	while true:
-		var last_point: Vector2
-		for point_index in range(path.curve.point_count):
-			var pos := path.curve.get_point_position(point_index)
-			var pin := pos + path.curve.get_point_in(point_index)
-			var pout := pos + path.curve.get_point_out(point_index)
-			last_point = path.to_global(pos)
-			walz.curve.add_point(
-				last_point,
-				path.to_global(pin) - last_point,
-				path.to_global(pout) - last_point,
-			)
-		if not paths: break
+	var sorted_positions := PackedVector2Array()
+	sorted_positions.append(start_road.global_position)
+	while not roads.is_empty():
+		var last_pos := sorted_positions[-1]
 		var min_dist := INF
-		var best_path_index := -1
-		for i in range(len(paths)):
-			var dist := paths[i].to_global(paths[i].curve.get_point_position(0)).distance_squared_to(last_point)
+		var closest_road_idx := -1
+		for i in range(len(roads)):
+			var dist := roads[i].global_position.distance_squared_to(last_pos)
 			if dist < min_dist:
 				min_dist = dist
-				best_path_index = i
-		path = paths.pop_at(best_path_index)
+				closest_road_idx = i
+		sorted_positions.append(roads.pop_at(closest_road_idx).global_position)
+
+	var num_positions := len(sorted_positions)
+	for i in range(num_positions):
+		var i_prev := (i - 1 + num_positions) % num_positions
+		var i_next := (i + 1) % num_positions
+		var pos := sorted_positions[i]
+		var p_in := sorted_positions[i_prev] - pos
+		var p_out := sorted_positions[i_next] - pos
+		walz.curve.add_point(pos, p_in, p_out)
 
 func _ready() -> void:
 	create_joined_path()
