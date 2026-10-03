@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dmj2olsrqohrx" path="res://ui/title_screen.gd" id="1_bor1v"]
 [ext_resource type="Script" uid="uid://djsakavgyhj32" path="res://ui/wobbly_letters_effect.gd" id="2_bor1v"]
+[ext_resource type="Shader" uid="uid://mhu3w8377cv3" path="res://ui/title_screen.gdshader" id="2_l1ku3"]
 [ext_resource type="PackedScene" uid="uid://bi8ypnscaif16" path="res://ui/controls_container.tscn" id="3_qer0c"]
 [ext_resource type="PackedScene" uid="uid://pnq25m2plhcy" path="res://ui/title_screen_controls.tscn" id="4_dk6f0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0116e"]
+shader = ExtResource("2_l1ku3")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nddwx"]
 bg_color = Color(0.004077159, 0.004077159, 0.0033606587, 1)
@@ -24,6 +28,7 @@ grow_vertical = 2
 script = ExtResource("1_bor1v")
 
 [node name="TopContainer" type="PanelContainer" parent="." unique_id=1699152117]
+material = SubResource("ShaderMaterial_0116e")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
