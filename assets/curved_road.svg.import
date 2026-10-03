@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdeg4hxuyqtm"
-path="res://.godot/imported/gay_road.svg-bf6a541257e6158df20b5def36aa36f7.ctex"
+path="res://.godot/imported/curved_road.svg-121719b1c6ab0e43544f705601e165c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gay_road.svg"
-dest_files=["res://.godot/imported/gay_road.svg-bf6a541257e6158df20b5def36aa36f7.ctex"]
+source_file="res://assets/curved_road.svg"
+dest_files=["res://.godot/imported/curved_road.svg-121719b1c6ab0e43544f705601e165c8.ctex"]
 
 [params]
 

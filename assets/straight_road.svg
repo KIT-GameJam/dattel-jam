@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="0.94960322"
-     inkscape:cx="414.91014"
-     inkscape:cy="195.87128"
+     inkscape:zoom="0.77148438"
+     inkscape:cx="11.017722"
+     inkscape:cy="340.90127"
      inkscape:window-width="1840"
      inkscape:window-height="1017"
      inkscape:window-x="0"
@@ -45,19 +45,9 @@
        sodipodi:insensitive="true"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#ffffff;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
-       d="m 231.20117,228.12305 v 110 h 30 v -110 z"
        id="path4-7-2"
-       transform="matrix(0.66666667,0,0,0.99999536,91.865886,228.87801)" />
-    <path
        style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#ffffff;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
-       d="m 231.20117,228.12305 v 110 h 30 v -110 z"
-       id="path4-7"
-       transform="matrix(0.66666667,0,0,0.99999536,91.865886,-283.12199)" />
-    <path
-       style="opacity:1;baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#ffffff;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
-       d="m 231.20117,228.12305 v 110 h 30 v -110 z"
-       id="path4"
-       transform="matrix(0.66666667,0,0,0.99999536,91.865886,-27.121992)" />
+       d="M 231.20117 -228.87907 L 231.20117 -173.87882 L 261.20117 -173.87882 L 261.20117 -228.87907 L 231.20117 -228.87907 z M 231.20117 -27.878139 L 231.20117 82.122371 L 261.20117 82.122371 L 261.20117 -27.878139 L 231.20117 -27.878139 z M 231.20117 228.12305 L 231.20117 283.1233 L 261.20117 283.1233 L 261.20117 228.12305 L 231.20117 228.12305 z "
+       transform="matrix(0.66666667,0,0,0.99999536,91.865886,228.87801)" />
   </g>
 </svg>
