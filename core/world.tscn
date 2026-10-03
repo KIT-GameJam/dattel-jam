@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://g1s6vg5w25v7" path="res://ui/overlay.tscn" id="5_wd0q5"]
 [ext_resource type="PackedScene" uid="uid://b5ymlu4py25pj" path="res://core/player_car.tscn" id="6_img2t"]
 [ext_resource type="Texture2D" uid="uid://bvhkpag8n5ln8" path="res://assets/goal.png" id="7_e2arr"]
+[ext_resource type="PackedScene" uid="uid://7wefaklk8eo0" path="res://core/walze.tscn" id="8_2uijj"]
 
 [sub_resource type="Animation" id="Animation_q7g5t"]
 length = 0.001
@@ -44,8 +45,6 @@ _data = {
 &"RESET": SubResource("Animation_q7g5t"),
 &"test_animation": SubResource("Animation_id21l")
 }
-
-[sub_resource type="Curve2D" id="Curve2D_img2t"]
 
 [node name="World" type="Node2D" unique_id=435221483]
 script = ExtResource("1_q7g5t")
@@ -110,9 +109,8 @@ rotation = -1.5707964
 [node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("6_img2t")]
 position = Vector2(658, 511)
 
-[node name="WalzPfad" type="Path2D" parent="." unique_id=1372904200]
-curve = SubResource("Curve2D_img2t")
-
 [node name="Goal" type="Sprite2D" parent="." unique_id=1185543907]
 position = Vector2(116, 56)
 texture = ExtResource("7_e2arr")
+
+[node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("8_2uijj")]
