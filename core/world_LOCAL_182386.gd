@@ -1,5 +1,4 @@
 extends Node2D
-class_name World
 
 @onready var walz_pfad : Path2D = $WalzPfad
 @onready var goal: Node2D = $Goal
@@ -10,18 +9,6 @@ func _find_start_road() -> Road:
 	query.collide_with_areas = true
 	query.collide_with_bodies = false
 	return get_world_2d().direct_space_state.intersect_point(query)[0]["collider"]
-
-var round: int = 0
-var timestamp: float = 0.0
-
-func end_round():
-	pass
-
-func start_new_round():
-	pass
-
-func get_timestamp() -> float:
-	return timestamp
 
 func create_joined_path() -> void:
 	var path := _find_start_road().path
@@ -57,6 +44,3 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed_by_event("pause", event):
 		Global.game().pause()
 		get_viewport().set_input_as_handled()
-
-func _physics_process(delta: float) -> void:
-	timestamp += delta

@@ -2,6 +2,7 @@ extends Node2D
 class_name World
 
 @onready var walz_pfad : Path2D = $WalzPfad
+<<<<<<< HEAD
 @onready var goal: Node2D = $Goal
 
 func _find_start_road() -> Road:
@@ -10,7 +11,7 @@ func _find_start_road() -> Road:
 	query.collide_with_areas = true
 	query.collide_with_bodies = false
 	return get_world_2d().direct_space_state.intersect_point(query)[0]["collider"]
-
+=======
 var round: int = 0
 var timestamp: float = 0.0
 
@@ -22,6 +23,7 @@ func start_new_round():
 
 func get_timestamp() -> float:
 	return timestamp
+>>>>>>> cd04843 (history eingebaut - braucht noch testing)
 
 func create_joined_path() -> void:
 	var path := _find_start_road().path

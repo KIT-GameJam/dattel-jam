@@ -7,7 +7,7 @@ const world: PackedScene = preload("res://core/world.tscn")
 @onready var title_screen_canvas: CanvasLayer = $TitleScreenCanvas
 @onready var pause_menu: CanvasLayer = $PauseMenu
 
-var current_world: Node
+var current_world: World
 
 func disable_title_screen() -> void:
 	title_screen_canvas.hide()
