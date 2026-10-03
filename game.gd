@@ -11,7 +11,7 @@ var ready_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const car_scene: PackedScene = preload("res://core/car.tscn")
 var player: HistoryObject
-var cars: Array [HistoryObject]
+var cars: Array [HistoryObject] = []
 
 func _ready() -> void:
 	_reload_level()
@@ -46,9 +46,9 @@ func _start_level() -> void:
 func _end_level() -> void:
 	cars.pop_back()
 	var new_car: HistoryObject =  car_scene.instantiate()
-	cars.append(new_car)
 	new_car.set_history(player.get_history())
-	player.queue_free()
 	for c in cars:
 		level.remove_child(c)
+	player.queue_free()
+	cars.append(new_car)
 	_reload_level()

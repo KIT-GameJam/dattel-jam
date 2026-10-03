@@ -18,12 +18,15 @@ func write_history():
 		global_rotation)
 	_history.append(entry)
 
+func _get_history_entry() -> HistoryEntry:
+	return _history[_read_index] if _read_index < len(_history) else null
+
 func read_history() -> UnpackedHistoryEntry:
-	var current_entry: HistoryEntry = _history[_read_index] if _read_index < len(_history) else null
+	var current_entry: HistoryEntry = _get_history_entry()
 	var timestamp = get_timestamp()
 	while current_entry and timestamp >= current_entry.timestamp:
 		_read_index += 1
-		current_entry = _history.get(_read_index)
+		current_entry = _get_history_entry()
 	var vel: Vector2 = Vector2.ZERO
 	var rot: float = global_rotation
 	if current_entry:
