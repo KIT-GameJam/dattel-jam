@@ -17,7 +17,9 @@ var level: Level
 var ready_ui: Node
 var traffic_light_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
-const car_scene: PackedScene = preload("res://core/ghost_car.tscn")
+const ghost_car_scenes: Array[PackedScene] = [
+	preload("res://core/minen_leger.tscn")
+]
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
 var is_race_started := false
@@ -60,7 +62,7 @@ func start_race() -> void:
 func _end_level() -> void:
 	stage += 1
 	cars.pop_back()
-	var new_car: HistoryObject = car_scene.instantiate()
+	var new_car: HistoryObject = ghost_car_scenes.pick_random().instantiate()
 	new_car.set_history(player.get_history())
 	for c in cars:
 		level.remove_child(c)
