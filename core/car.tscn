@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bjhhdrusuxlsr"]
+
+[ext_resource type="Script" path="res://core/car.gd" id="1_6811t"]
+[ext_resource type="Shader" uid="uid://slb8bxbkx4de" path="res://core/ghost.gdshader" id="1_n01it"]
+[ext_resource type="Texture2D" uid="uid://ok00q6682nb1" path="res://assets/car.svg" id="2_6811t"]
+[ext_resource type="Texture2D" uid="uid://1nvn5r7oornt" path="res://assets/tire.svg" id="4_7a1q3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n01it"]
+shader = ExtResource("1_n01it")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64ceh"]
+size = Vector2(8, 22)
+
+[node name="Car" type="CharacterBody2D" unique_id=721211325]
+material = SubResource("ShaderMaterial_n01it")
+scale = Vector2(0.75, 0.75)
+collision_layer = 2
+script = ExtResource("1_6811t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=788458496]
+shape = SubResource("RectangleShape2D_64ceh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103895134]
+use_parent_material = true
+rotation = -1.5707964
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_6811t")
+
+[node name="Tire" type="Sprite2D" parent="Sprite2D" unique_id=1926844439]
+z_index = -1
+use_parent_material = true
+position = Vector2(145, 65.50001)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_7a1q3")
+
+[node name="Tire2" type="Sprite2D" parent="Sprite2D" unique_id=690129115]
+z_index = -1
+use_parent_material = true
+position = Vector2(145, -65.5)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_7a1q3")
+
+[node name="Tire3" type="Sprite2D" parent="Sprite2D" unique_id=191449843]
+z_index = -1
+use_parent_material = true
+position = Vector2(-148.33301, 65.5)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_7a1q3")
+
+[node name="Tire4" type="Sprite2D" parent="Sprite2D" unique_id=352449505]
+z_index = -1
+use_parent_material = true
+position = Vector2(-148.33301, -65.50001)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_7a1q3")
