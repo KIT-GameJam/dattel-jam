@@ -9,6 +9,7 @@ extends PanelContainer
 
 @onready var button_node: Button = $Button
 @onready var label_node: RichTextLabel = $HBoxContainer/MarginContainer/RichTextLabel
+@onready var plop: AudioStreamPlayer2D = $Plop
 @export var shortcut_action: String = ""
 
 signal on_click()
@@ -38,3 +39,6 @@ func _input(event: InputEvent) -> void:
 
 func _on_button_pressed() -> void:
 	on_click.emit()
+
+func _on_mouse_entered() -> void:
+	plop.play()

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d170ehsn2fbbl"]
 
 [ext_resource type="Script" uid="uid://2y1vfse6vlaw" path="res://ui/button.gd" id="1_0dg7g"]
+[ext_resource type="AudioStream" uid="uid://bmuyeuwgcfuwa" path="res://assets/sfx/Blopp.ogg" id="2_7krdg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dg7g"]
 
@@ -83,4 +84,8 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 vertical_alignment = 1
 
+[node name="Plop" type="AudioStreamPlayer2D" parent="." unique_id=736892729]
+stream = ExtResource("2_7krdg")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
