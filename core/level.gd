@@ -30,13 +30,13 @@ func create_joined_path() -> void:
 		var last_point: Vector2
 		for point_index in range(path.curve.point_count):
 			var pos := path.curve.get_point_position(point_index)
-			var pin := path.curve.get_point_in(point_index)
-			var pout := path.curve.get_point_out(point_index)
+			var pin := pos + path.curve.get_point_in(point_index)
+			var pout := pos + path.curve.get_point_out(point_index)
 			last_point = path.to_global(pos)
 			walz.curve.add_point(
 				last_point,
-				pin,
-				pout,
+				path.to_global(pin) - last_point,
+				path.to_global(pout) - last_point,
 			)
 		if not paths: break
 		var min_dist := INF

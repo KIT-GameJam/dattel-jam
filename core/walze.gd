@@ -1,6 +1,6 @@
 extends Path2D
 
-@export var speed := 200.0
+@export var speed := 50.0
 
 @onready var follow: PathFollow2D = $PathFollow2D
 

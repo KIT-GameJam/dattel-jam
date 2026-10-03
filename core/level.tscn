@@ -172,6 +172,3 @@ rotation = 2.2811453
 scale = Vector2(0.2, 0.2)
 
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
-position = Vector2(157.1939, 19.551542)
-rotation = 2.2811453
-scale = Vector2(0.2, 0.2)
