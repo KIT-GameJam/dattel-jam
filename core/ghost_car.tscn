@@ -11,6 +11,7 @@ shader = ExtResource("1_bus7i")
 size = Vector2(8, 22)
 
 [node name="GhostCar" type="CharacterBody2D" unique_id=721211325]
+z_index = 1
 material = SubResource("ShaderMaterial_n01it")
 scale = Vector2(0.75, 0.75)
 collision_layer = 2

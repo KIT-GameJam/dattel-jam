@@ -11,6 +11,7 @@ size = Vector2(8, 22)
 size = Vector2(2, 2)
 
 [node name="PlayerCar" type="CharacterBody2D" unique_id=721211325]
+z_index = 1
 scale = Vector2(0.75, 0.75)
 collision_layer = 4
 collision_mask = 7
