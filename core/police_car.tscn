@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c6qvok2jqkvem"]
-    
-[ext_resource type="PackedScene" uid="uid://bjhhdrusuxlsr" path="res://core/car.tscn" id="1_bswkx"]
+[gd_scene format=3 uid="uid://4kb4vrhpxp2x"]
+
+[ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_bswkx"]
 [ext_resource type="Script" uid="uid://bqsie7q7qiwh5" path="res://core/police_car.gd" id="2_h61j7"]
 [ext_resource type="Texture2D" uid="uid://bq8y0o0tddff6" path="res://assets/car_police.svg" id="3_f3jys"]
 
