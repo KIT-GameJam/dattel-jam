@@ -16,3 +16,10 @@ func get_level() -> Level:
 
 func get_timestamp() -> float:
 	return get_level().get_timestamp()
+
+func pause():
+	get_game_manager().pause()
+func unpause():
+	get_game_manager().unpause()
+func return_to_title_screen():
+	get_game_manager().return_to_title_screen()

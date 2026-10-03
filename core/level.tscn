@@ -57,7 +57,7 @@ position = Vector2(96, 56)
 rotation = -1.5707964
 
 [node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("5_setdq")]
-position = Vector2(658, 511)
+position = Vector2(175, 189)
 
 [node name="Goal" type="Sprite2D" parent="." unique_id=1185543907]
 position = Vector2(116, 56)
