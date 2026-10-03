@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cq6ndxyc5xb3a"]
+
+[ext_resource type="Script" uid="uid://boff6huby5mfx" path="res://ui/traffic_light.gd" id="1_738p0"]
+[ext_resource type="Texture2D" uid="uid://bj8wm23uoqcef" path="res://assets/traffic-light-off.svg" id="1_daxdx"]
+
+[node name="TrafficLight" type="TextureRect" unique_id=950638662]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_daxdx")
+script = ExtResource("1_738p0")

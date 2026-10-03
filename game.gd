@@ -12,8 +12,10 @@ var max_stages = 3
 
 const level_scene: PackedScene = preload("res://core/level.tscn")
 const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
+const traffic_light_scene: PackedScene = preload("res://ui/beep_boop.tscn")
 var level: Level
 var ready_ui: Node
+var traffic_light_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const car_scene: PackedScene = preload("res://core/car.tscn")
 var player: HistoryObject
@@ -49,6 +51,10 @@ func _reload_level() -> void:
 
 func _start_level() -> void:
 	ready_ui.queue_free()
+	traffic_light_ui = traffic_light_scene.instantiate()
+	add_child(traffic_light_ui)
+
+func start_race() -> void:
 	is_race_started = true
 
 func _end_level() -> void:
