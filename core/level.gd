@@ -1,8 +1,9 @@
 extends Node2D
-class_name World
+class_name Level
 
 @onready var walz : Path2D = $Walze
 @onready var goal: Node2D = $Goal
+var timestamp: float = 0.0
 
 func _find_start_road() -> Road:
 	var query := PhysicsPointQueryParameters2D.new()
@@ -10,9 +11,6 @@ func _find_start_road() -> Road:
 	query.collide_with_areas = true
 	query.collide_with_bodies = false
 	return get_world_2d().direct_space_state.intersect_point(query)[0]["collider"]
-
-var round: int = 0
-var timestamp: float = 0.0
 
 func end_round():
 	pass

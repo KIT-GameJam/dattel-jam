@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://7ak4jrpvh1c1"]
+
+[ext_resource type="Script" uid="uid://c1otrtgsq1r8w" path="res://core/game_manager.gd" id="1_8prga"]
+[ext_resource type="PackedScene" uid="uid://bi8ypnscaif16" path="res://ui/controls_container.tscn" id="2_x1aqt"]
+[ext_resource type="PackedScene" uid="uid://hl2ujghfrv1l" path="res://ui/pause_controls.tscn" id="3_a6n74"]
+[ext_resource type="PackedScene" uid="uid://bvmulltrvvj7f" path="res://ui/title_screen.tscn" id="4_bkwe0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrnn"]
+bg_color = Color(0, 0, 0, 0.77254903)
+
+[node name="GameManager" type="Node" unique_id=1931857096]
+script = ExtResource("1_8prga")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=780776368]
+process_mode = 2
+layer = 12
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu" unique_id=1633374197]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/CenterContainer" unique_id=1365965392]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_plrnn")
+
+[node name="ControlsContainer" parent="PauseMenu/CenterContainer/PanelContainer" unique_id=765224759 instance=ExtResource("2_x1aqt")]
+layout_mode = 2
+initial_controls_scene = ExtResource("3_a6n74")
+
+[node name="TitleScreenCanvas" type="CanvasLayer" parent="." unique_id=252381091]
+process_mode = 3
+layer = 10
+
+[node name="TitleScreen" parent="TitleScreenCanvas" unique_id=1268057368 instance=ExtResource("4_bkwe0")]
+
+[node name="Game" type="Node" parent="." unique_id=132858365]
+process_mode = 1

@@ -6,7 +6,7 @@ var _history: Array [HistoryEntry] = []
 var _read_index: int = 0
 
 func get_timestamp() -> float:
-	return Global.game().current_world.get_timestamp()
+	return Global.get_timestamp()
 
 func write_history():
 	var entry: HistoryEntry = HistoryEntry.new(

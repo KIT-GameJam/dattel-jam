@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c7xfasd5aw1sp"]
+
+[ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/level.gd" id="1_bhxwn"]
+[ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="3_v1dmi"]
+[ext_resource type="PackedScene" uid="uid://c0viw41w6fn8o" path="res://road/curved_road.tscn" id="4_wsccs"]
+[ext_resource type="PackedScene" uid="uid://b5ymlu4py25pj" path="res://core/player_car.tscn" id="5_setdq"]
+[ext_resource type="Texture2D" uid="uid://bvhkpag8n5ln8" path="res://assets/goal.png" id="6_t0ybl"]
+[ext_resource type="PackedScene" uid="uid://7wefaklk8eo0" path="res://core/walze.tscn" id="7_ppale"]
+
+[node name="Level" type="Node2D" unique_id=435221483]
+script = ExtResource("1_bhxwn")
+
+[node name="StraightRoad" parent="." unique_id=701535564 instance=ExtResource("3_v1dmi")]
+position = Vector2(144, 56)
+
+[node name="StraightRoad2" parent="." unique_id=1355514479 instance=ExtResource("3_v1dmi")]
+position = Vector2(208, 56)
+
+[node name="CurvedRoad" parent="." unique_id=340501329 instance=ExtResource("4_wsccs")]
+position = Vector2(256, 56)
+
+[node name="CurvedRoad4" parent="." unique_id=756347523 instance=ExtResource("4_wsccs")]
+position = Vector2(256, 87.99999)
+rotation = 1.5707964
+scale = Vector2(1, -1)
+
+[node name="CurvedRoad5" parent="." unique_id=595084497 instance=ExtResource("4_wsccs")]
+position = Vector2(288, 87.99999)
+
+[node name="CurvedRoad3" parent="." unique_id=719798590 instance=ExtResource("4_wsccs")]
+position = Vector2(288, 120)
+rotation = 1.5707964
+
+[node name="StraightRoad4" parent="." unique_id=1579889128 instance=ExtResource("3_v1dmi")]
+position = Vector2(240, 120)
+rotation = -3.1415925
+
+[node name="StraightRoad3" parent="." unique_id=1629255290 instance=ExtResource("3_v1dmi")]
+position = Vector2(176, 120)
+rotation = -3.1415925
+
+[node name="CurvedRoad6" parent="." unique_id=2100535810 instance=ExtResource("4_wsccs")]
+position = Vector2(128, 120)
+rotation = -3.1415925
+
+[node name="CurvedRoad7" parent="." unique_id=290041299 instance=ExtResource("4_wsccs")]
+position = Vector2(128, 87.99999)
+rotation = 1.5707964
+scale = Vector2(-1, 1)
+
+[node name="CurvedRoad8" parent="." unique_id=604825028 instance=ExtResource("4_wsccs")]
+position = Vector2(96.000015, 88.00001)
+rotation = -3.1415925
+
+[node name="CurvedRoad2" parent="." unique_id=2048473370 instance=ExtResource("4_wsccs")]
+position = Vector2(96, 56)
+rotation = -1.5707964
+
+[node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("5_setdq")]
+position = Vector2(658, 511)
+
+[node name="Goal" type="Sprite2D" parent="." unique_id=1185543907]
+position = Vector2(116, 56)
+texture = ExtResource("6_t0ybl")
+
+[node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
