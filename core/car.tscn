@@ -12,6 +12,7 @@ size = Vector2(8, 22)
 
 [node name="Car" type="CharacterBody2D" unique_id=721211325]
 material = SubResource("ShaderMaterial_n01it")
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 script = ExtResource("1_6811t")
 
