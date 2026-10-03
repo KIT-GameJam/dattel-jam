@@ -3,10 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_i8xdt"]
 [ext_resource type="Script" uid="uid://57n6kcxi3os5" path="res://core/minen_leger.gd" id="2_jxhgj"]
 [ext_resource type="Texture2D" uid="uid://be3asqst2ed1e" path="res://assets/bomb.svg" id="2_qminj"]
+[ext_resource type="Texture2D" uid="uid://bx57tsj5k25mi" path="res://assets/military-car.svg" id="3_jxhgj"]
 
 [node name="MinenLeger" unique_id=721211325 instance=ExtResource("1_i8xdt")]
 script = ExtResource("2_jxhgj")
 ghost_name = "Minenleger"
+
+[node name="Sprite2D" parent="." index="1" unique_id=2103895134]
+texture = ExtResource("3_jxhgj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="2" unique_id=600373376]
 use_parent_material = true
