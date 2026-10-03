@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b08cqbex418sg"]
+
+[ext_resource type="PackedScene" uid="uid://cs073o3xu7y0u" path="res://core/ghost_car.tscn" id="1_i8xdt"]
+[ext_resource type="Script" uid="uid://57n6kcxi3os5" path="res://core/minen_leger.gd" id="2_jxhgj"]
+[ext_resource type="Texture2D" uid="uid://be3asqst2ed1e" path="res://assets/bomb.svg" id="2_qminj"]
+
+[node name="MinenLeger" unique_id=721211325 instance=ExtResource("1_i8xdt")]
+script = ExtResource("2_jxhgj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="2" unique_id=600373376]
+use_parent_material = true
+position = Vector2(0, 1.3333335)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("2_qminj")
+
+[node name="MinenTimer" type="Timer" parent="." index="3" unique_id=1583005482]
+
+[connection signal="timeout" from="MinenTimer" to="." method="_on_minen_timer_timeout"]

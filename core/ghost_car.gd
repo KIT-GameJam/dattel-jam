@@ -1,3 +1,4 @@
+class_name GhostCar
 extends HistoryObject
 
 func pausable_physics_process(_delta: float) -> void:
