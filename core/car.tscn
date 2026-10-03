@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dtsbdqwgado4j" path="res://core/car.gd" id="1_6811t"]
 [ext_resource type="Texture2D" uid="uid://w26tmhj13hrm" path="res://dattel.png" id="1_fytjt"]
+[ext_resource type="Shader" uid="uid://slb8bxbkx4de" path="res://core/ghost.gdshader" id="1_n01it"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tijfq"]
+shader = ExtResource("1_n01it")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64ceh"]
 
 [node name="Car" type="CharacterBody2D" unique_id=721211325]
+material = SubResource("ShaderMaterial_tijfq")
 collision_layer = 2
 script = ExtResource("1_6811t")
 
@@ -13,6 +18,7 @@ script = ExtResource("1_6811t")
 shape = SubResource("RectangleShape2D_64ceh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103895134]
+use_parent_material = true
 position = Vector2(2.026558e-06, -1.9073486e-06)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_fytjt")

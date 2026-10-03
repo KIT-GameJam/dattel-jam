@@ -5,6 +5,12 @@ class_name HistoryObject
 var _history: Array [HistoryEntry] = []
 var _read_index: int = 0
 
+@export var uses_ghost_shader := true
+
+func _ready() -> void:
+	if not uses_ghost_shader:
+		material = null
+
 func get_timestamp() -> float:
 	return Global.get_timestamp()
 
