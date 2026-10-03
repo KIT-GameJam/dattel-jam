@@ -1,5 +1,7 @@
 extends Node
 
+const DEBUG: bool = true
+
 func exit_game() -> void:
 	get_tree().quit()
 

@@ -9,6 +9,9 @@ const game_scene: PackedScene = preload("res://core/game.tscn")
 
 var current_game: Game
 
+func _ready() -> void:
+	if Global.DEBUG: start()
+
 func disable_title_screen() -> void:
 	title_screen_canvas.hide()
 	title_screen_canvas.process_mode = Node.ProcessMode.PROCESS_MODE_DISABLED

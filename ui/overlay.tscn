@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://g1s6vg5w25v7"]
 
+[ext_resource type="Script" uid="uid://bnwam8wktl3kr" path="res://ui/overlay.gd" id="1_fvwlh"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2arr"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -11,6 +13,7 @@ border_width_bottom = 2
 border_color = Color(0.5370113, 0.5370114, 0.5370111, 1)
 
 [node name="Overlay" type="CanvasLayer" unique_id=920032816]
+script = ExtResource("1_fvwlh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1272906395]
 anchors_preset = 10
