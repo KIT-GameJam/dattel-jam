@@ -22,8 +22,8 @@ var cars: Array [HistoryObject] = []
 func _ready() -> void:
 	_reload_level()
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("temp_reach_goal"):
+func _process(_delta: float) -> void:
+	if Global.DEBUG and not ready_ui and stage < max_stages and Input.is_action_just_pressed("temp_reach_goal"):
 		_end_level()
 
 func _reload_level() -> void:
@@ -41,7 +41,7 @@ func _reload_level() -> void:
 		c.global_rotation = start_rot
 		level.add_child(c)
 		c.reset_read_index()
-		
+
 	level.process_mode = Node.PROCESS_MODE_DISABLED
 
 	ready_ui = ready_scene.instantiate()
@@ -54,7 +54,7 @@ func _start_level() -> void:
 func _end_level() -> void:
 	stage += 1
 	cars.pop_back()
-	var new_car: HistoryObject =  car_scene.instantiate()
+	var new_car: HistoryObject = car_scene.instantiate()
 	new_car.set_history(player.get_history())
 	for c in cars:
 		level.remove_child(c)
