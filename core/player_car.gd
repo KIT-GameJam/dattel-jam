@@ -8,9 +8,12 @@ const SPEED_DOWN_FACTOR := 0.3
 const TURNING_MAX_SPEED_DAMP := 0.7
 const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
 const TIRE_ANGLE: float = deg_to_rad(30.0);
+const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")
+const BRUMM2: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm2.ogg")
 
 @onready var detection_area: Area2D = $DetectionArea
 @onready var tires: Array[Sprite2D] = [$Sprite2D/Tire, $Sprite2D/Tire2]
+@onready var brumm: AudioStreamPlayer2D = $BrummPlayer
 var speed := 0.0
 var is_turning := false
 var curr_tire_rot: int = 0
@@ -59,5 +62,20 @@ func pausable_physics_process(delta: float) -> void:
 	write_history()
 
 func die() -> void:
-	# "sieht gut aus" - Jan
+	# Keiner:
+	# Niklas: "sieht gut aus"
 	Global.get_level().end_round()
+
+func _ready() -> void:
+	start_brumm()
+
+func _on_brumm_player_finished() -> void:
+	start_brumm()
+
+func _process(_delta: float) -> void:
+	brumm.volume_db = -INF if speed == 0.0 else (2.0 - 600.0 / speed)
+
+func start_brumm() -> void:
+	brumm.stream = [BRUMM1, BRUMM2].pick_random()
+	brumm.pitch_scale = 0.6 + speed * 0.006 + randf_range(-0.05, 0.05)
+	brumm.play()

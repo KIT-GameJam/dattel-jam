@@ -30,3 +30,6 @@ func _on_window_mode_button_on_click() -> void:
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), value)
+
+func _on_motor_volume_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Motor"), value)
