@@ -35,9 +35,9 @@ func _reload_level() -> void:
 	is_race_started = false
 	level = level_scene.instantiate()
 	add_child(level)
-	var temp = level.get_start_position()
-	var start_pos = Vector2(temp.x, temp.y)
-	var start_rot = temp.z + PI/2
+	var temp := level.get_start_position()
+	var start_pos := Vector2(temp.x, temp.y)
+	var start_rot := temp.z + PI/2
 	player = player_scene.instantiate()
 	cars.append(player)
 	for c in cars:
