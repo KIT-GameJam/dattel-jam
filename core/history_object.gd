@@ -8,6 +8,9 @@ var _read_index: int = 0
 func get_timestamp() -> float:
 	return Global.get_timestamp()
 
+func reset_read_index():
+	_read_index = 0
+
 func write_history():
 	var entry: HistoryEntry = HistoryEntry.new(
 		get_timestamp(),
@@ -28,6 +31,11 @@ func read_history() -> UnpackedHistoryEntry:
 		vel = (current_entry.pos - global_position)/delta_t
 		rot = (current_entry.rot - global_rotation)/delta_t
 	return UnpackedHistoryEntry.new(vel, rot)
+
+func set_history(hist: Array [HistoryEntry]):
+	_history = hist
+func get_history() -> Array [HistoryEntry]:
+	return _history
 
 class HistoryEntry:
 	var timestamp: float

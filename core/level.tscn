@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/level.gd" id="1_bhxwn"]
 [ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="3_v1dmi"]
 [ext_resource type="PackedScene" uid="uid://3iwrbnnekfav" path="res://road/half_curved_road.tscn" id="5_q5p7b"]
-[ext_resource type="PackedScene" uid="uid://b5ymlu4py25pj" path="res://core/player_car.tscn" id="5_setdq"]
 [ext_resource type="Texture2D" uid="uid://bvhkpag8n5ln8" path="res://assets/goal.png" id="6_t0ybl"]
 [ext_resource type="PackedScene" uid="uid://7wefaklk8eo0" path="res://core/walze.tscn" id="7_ppale"]
 
@@ -165,10 +164,5 @@ position = Vector2(333.27646, 208.83582)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("6_t0ybl")
-
-[node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("5_setdq")]
-position = Vector2(332.1939, 208.55154)
-rotation = 2.2811453
-scale = Vector2(0.2, 0.2)
 
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]

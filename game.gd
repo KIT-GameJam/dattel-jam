@@ -24,15 +24,29 @@ func _reload_level() -> void:
 	if level:
 		level.queue_free()
 	level = level_scene.instantiate()
-	level.get_start_position()
+	var temp = level.get_start_position()
+	var start_pos = Vector2(temp.x, temp.y)
+	var start_rot = temp.z
+	player = player_scene.instantiate()
+	cars.append(player)
+	for c in cars:
+		c.global_position = start_pos
+		c.global_rotation = start_rot
+		add_child(c)
+		c.reset_read_index()
+	level.process_mode = Node.PROCESS_MODE_DISABLED
 	add_child(level)
 	ready_ui = ready_scene.instantiate()
 	add_child(ready_ui)
-	level.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _start_level() -> void:
 	ready_ui.queue_free()
 	level.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _end_level() -> void:
-	pass
+	var new_car: HistoryObject =  car_scene.instantiate()
+	cars.append(new_car)
+	new_car.set_history(player.get_history())
+	player.queue_free()
+	for c in cars:
+		remove_child(c)
