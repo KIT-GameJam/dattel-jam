@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64ceh"]
 
 [node name="Car" type="CharacterBody2D" unique_id=721211325]
+collision_layer = 2
 script = ExtResource("1_6811t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=788458496]
