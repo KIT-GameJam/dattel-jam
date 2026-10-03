@@ -9,6 +9,7 @@ b = Vector2(64, 0)
 
 [node name="PoliceCar" unique_id=721211325 instance=ExtResource("1_bswkx")]
 script = ExtResource("2_h61j7")
+ghost_name = "Verkehrspolizei"
 uses_ghost_shader = null
 
 [node name="Barrier" type="Area2D" parent="." index="2" unique_id=1255066029]

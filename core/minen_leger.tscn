@@ -6,6 +6,7 @@
 
 [node name="MinenLeger" unique_id=721211325 instance=ExtResource("1_i8xdt")]
 script = ExtResource("2_jxhgj")
+ghost_name = "Minenleger"
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="2" unique_id=600373376]
 use_parent_material = true

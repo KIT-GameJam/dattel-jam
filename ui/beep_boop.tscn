@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cq6ndxyc5xb3a" path="res://ui/traffic_light.tscn" id="1_0dmrh"]
 [ext_resource type="Script" uid="uid://c416tceodsxnr" path="res://ui/beep_boop.gd" id="1_0116e"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0116e"]
+font_size = 24
+shadow_size = 8
+shadow_color = Color(0.007843138, 0.007843138, 0.007843138, 0.7882353)
+
 [node name="BeepBoop" type="CanvasLayer" unique_id=365712340]
 script = ExtResource("1_0116e")
 
@@ -15,7 +20,7 @@ offset_left = -122.5
 offset_right = 122.5
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.31
 
@@ -25,6 +30,7 @@ layout_mode = 2
 
 [node name="TrafficLightContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2092306797]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 0
 
 [node name="TrafficLight1" parent="VBoxContainer/TrafficLightContainer" unique_id=950638662 instance=ExtResource("1_0dmrh")]
@@ -41,6 +47,14 @@ layout_mode = 2
 
 [node name="TrafficLight5" parent="VBoxContainer/TrafficLightContainer" unique_id=2060350656 instance=ExtResource("1_0dmrh")]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=2046787265]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=706334296]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_0116e")
 
 [node name="Timer" type="Timer" parent="." unique_id=1189428176]
 wait_time = 0.8

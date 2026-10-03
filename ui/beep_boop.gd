@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var container: Control = $VBoxContainer/TrafficLightContainer
+@onready var label: Label = $VBoxContainer/Label
 @onready var timer: Timer = $Timer
 var traffic_lights: Array[TrafficLight] = []
 var step := 0
@@ -12,6 +13,9 @@ func _ready() -> void:
 		timer.wait_time = 0.4
 	timer.start()
 	traffic_lights.assign(container.get_children())
+
+func update_text(val: String) -> void:
+	label.text = "Neuer Geist erschienen: " + val
 
 func _next_level():
 	if is_done:

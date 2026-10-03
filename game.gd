@@ -24,6 +24,7 @@ const ghost_car_scenes: Array[PackedScene] = [
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
 var is_race_started := false
+var next_ghost_car: GhostCar = null
 
 func _ready() -> void:
 	_reload_level()
@@ -55,6 +56,9 @@ func _reload_level() -> void:
 func _start_level() -> void:
 	ready_ui.queue_free()
 	traffic_light_ui = traffic_light_scene.instantiate()
+	next_ghost_car = ghost_car_scenes.pick_random().instantiate()
+	if stage:
+		(func(): traffic_light_ui.update_text(next_ghost_car.ghost_name)).call_deferred()
 	add_child(traffic_light_ui)
 
 func start_race() -> void:
@@ -63,7 +67,7 @@ func start_race() -> void:
 func end_level() -> void:
 	stage += 1
 	cars.pop_back()
-	var new_car: HistoryObject = ghost_car_scenes.pick_random().instantiate()
+	var new_car: HistoryObject = next_ghost_car
 	new_car.set_history(player.get_history())
 	for c in cars:
 		level.remove_child(c)
