@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u6qnkh7h5bb7" path="res://core/level.gd" id="1_bhxwn"]
 [ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="3_v1dmi"]
-[ext_resource type="PackedScene" uid="uid://c0viw41w6fn8o" path="res://road/curved_road.tscn" id="4_wsccs"]
+[ext_resource type="PackedScene" uid="uid://3iwrbnnekfav" path="res://road/half_curved_road.tscn" id="5_q5p7b"]
 [ext_resource type="PackedScene" uid="uid://b5ymlu4py25pj" path="res://core/player_car.tscn" id="5_setdq"]
 [ext_resource type="Texture2D" uid="uid://bvhkpag8n5ln8" path="res://assets/goal.png" id="6_t0ybl"]
 [ext_resource type="PackedScene" uid="uid://7wefaklk8eo0" path="res://core/walze.tscn" id="7_ppale"]
@@ -10,57 +10,168 @@
 [node name="Level" type="Node2D" unique_id=435221483]
 script = ExtResource("1_bhxwn")
 
-[node name="StraightRoad" parent="." unique_id=701535564 instance=ExtResource("3_v1dmi")]
-position = Vector2(144, 56)
+[node name="StraightRoad5" parent="." unique_id=701535564 instance=ExtResource("3_v1dmi")]
+position = Vector2(339, 215)
+rotation = 0.7853982
 
-[node name="StraightRoad2" parent="." unique_id=1355514479 instance=ExtResource("3_v1dmi")]
-position = Vector2(208, 56)
+[node name="StraightRoad6" parent="." unique_id=989549227 instance=ExtResource("3_v1dmi")]
+position = Vector2(384.13364, 260.00394)
+rotation = 0.7853982
 
-[node name="CurvedRoad" parent="." unique_id=340501329 instance=ExtResource("4_wsccs")]
-position = Vector2(256, 56)
+[node name="StraightRoad7" parent="." unique_id=1497108562 instance=ExtResource("3_v1dmi")]
+position = Vector2(428.04074, 304.4467)
+rotation = 0.7853982
 
-[node name="CurvedRoad4" parent="." unique_id=756347523 instance=ExtResource("4_wsccs")]
-position = Vector2(256, 87.99999)
+[node name="HalfCurvedRoad2" parent="." unique_id=693694330 instance=ExtResource("5_q5p7b")]
+position = Vector2(473.9307, 346.57938)
+rotation = 0.7853982
+
+[node name="StraightRoad8" parent="." unique_id=1183562284 instance=ExtResource("3_v1dmi")]
+position = Vector2(478.02322, 410.52765)
 rotation = 1.5707964
-scale = Vector2(1, -1)
 
-[node name="CurvedRoad5" parent="." unique_id=595084497 instance=ExtResource("4_wsccs")]
-position = Vector2(288, 87.99999)
-
-[node name="CurvedRoad3" parent="." unique_id=719798590 instance=ExtResource("4_wsccs")]
-position = Vector2(288, 120)
+[node name="HalfCurvedRoad4" parent="." unique_id=1230586630 instance=ExtResource("5_q5p7b")]
+position = Vector2(480.41345, 473.48282)
 rotation = 1.5707964
 
-[node name="StraightRoad4" parent="." unique_id=1579889128 instance=ExtResource("3_v1dmi")]
-position = Vector2(240, 120)
-rotation = -3.1415925
+[node name="StraightRoad9" parent="." unique_id=1427562500 instance=ExtResource("3_v1dmi")]
+position = Vector2(438.2513, 520.3595)
+rotation = 2.3561945
 
-[node name="StraightRoad3" parent="." unique_id=1629255290 instance=ExtResource("3_v1dmi")]
-position = Vector2(176, 120)
-rotation = -3.1415925
+[node name="StraightRoad10" parent="." unique_id=1826227598 instance=ExtResource("3_v1dmi")]
+position = Vector2(339, 215)
+rotation = 0.7853982
 
-[node name="CurvedRoad6" parent="." unique_id=2100535810 instance=ExtResource("4_wsccs")]
-position = Vector2(128, 120)
-rotation = -3.1415925
+[node name="StraightRoad11" parent="." unique_id=2028499684 instance=ExtResource("3_v1dmi")]
+position = Vector2(384.13364, 260.00394)
+rotation = 0.7853982
 
-[node name="CurvedRoad7" parent="." unique_id=290041299 instance=ExtResource("4_wsccs")]
-position = Vector2(128, 87.99999)
-rotation = 1.5707964
+[node name="StraightRoad12" parent="." unique_id=1909246961 instance=ExtResource("3_v1dmi")]
+position = Vector2(428.04074, 304.4467)
+rotation = 0.7853982
+
+[node name="StraightRoad13" parent="." unique_id=2052492980 instance=ExtResource("3_v1dmi")]
+position = Vector2(393.48514, 564.52045)
+rotation = 2.3561945
+
+[node name="StraightRoad14" parent="." unique_id=691870299 instance=ExtResource("3_v1dmi")]
+position = Vector2(348.76617, 608.90735)
+rotation = 2.3561945
+
+[node name="StraightRoad15" parent="." unique_id=1740515979 instance=ExtResource("3_v1dmi")]
+position = Vector2(304, 653.0683)
+rotation = 2.3561945
+
+[node name="StraightRoad16" parent="." unique_id=2045381232 instance=ExtResource("3_v1dmi")]
+position = Vector2(259.27817, 697.9308)
+rotation = 2.3561945
+
+[node name="StraightRoad17" parent="." unique_id=1978135212 instance=ExtResource("3_v1dmi")]
+position = Vector2(214.512, 742.09174)
+rotation = 2.3561945
+
+[node name="HalfCurvedRoad5" parent="." unique_id=215765631 instance=ExtResource("5_q5p7b")]
+position = Vector2(170.04396, 786.5169)
+rotation = 2.3561945
+
+[node name="HalfCurvedRoad6" parent="." unique_id=1833812009 instance=ExtResource("5_q5p7b")]
+position = Vector2(106.747574, 790.3667)
+rotation = 3.1415927
+
+[node name="StraightRoad18" parent="." unique_id=1177181991 instance=ExtResource("3_v1dmi")]
+position = Vector2(60.6326, 748.13214)
+rotation = 3.9269907
+
+[node name="StraightRoad19" parent="." unique_id=1019114659 instance=ExtResource("3_v1dmi")]
+position = Vector2(16.00003, 702.99884)
+rotation = 3.9269907
+
+[node name="StraightRoad20" parent="." unique_id=1757305562 instance=ExtResource("3_v1dmi")]
+position = Vector2(-27.784637, 658.52466)
+rotation = 3.9269907
+
+[node name="StraightRoad21" parent="." unique_id=1006825280 instance=ExtResource("3_v1dmi")]
+position = Vector2(-70.34688, 614.8098)
+rotation = 3.9269907
+
+[node name="StraightRoad22" parent="." unique_id=444692160 instance=ExtResource("3_v1dmi")]
+position = Vector2(-114.97945, 569.6765)
+rotation = 3.9269907
+
+[node name="StraightRoad23" parent="." unique_id=365144273 instance=ExtResource("3_v1dmi")]
+position = Vector2(-158.76411, 525.20233)
+rotation = 3.9269907
+
+[node name="HalfCurvedRoad7" parent="." unique_id=1586319051 instance=ExtResource("5_q5p7b")]
+position = Vector2(-204.6408, 479.77808)
+rotation = 3.9269907
+
+[node name="StraightRoad24" parent="." unique_id=1093419277 instance=ExtResource("3_v1dmi")]
+position = Vector2(-206.26366, 418.3612)
+rotation = 4.712389
+
+[node name="StraightRoad25" parent="." unique_id=761835601 instance=ExtResource("3_v1dmi")]
+position = Vector2(-207.32243, 356.04224)
+rotation = 4.712389
+
+[node name="HalfCurvedRoad8" parent="." unique_id=1578565112 instance=ExtResource("5_q5p7b")]
+position = Vector2(-207.66324, 293.50452)
+rotation = 4.712389
+
+[node name="StraightRoad26" parent="." unique_id=810796956 instance=ExtResource("3_v1dmi")]
+position = Vector2(-163.13818, 246.06978)
+rotation = 5.497787
+
+[node name="StraightRoad27" parent="." unique_id=1736429766 instance=ExtResource("3_v1dmi")]
+position = Vector2(-118.21066, 202.25)
+rotation = 5.497787
+
+[node name="StraightRoad28" parent="." unique_id=2044629830 instance=ExtResource("3_v1dmi")]
+position = Vector2(-73.59323, 157.87935)
+rotation = 5.497787
+
+[node name="HalfCurvedRoad9" parent="." unique_id=754067775 instance=ExtResource("5_q5p7b")]
+position = Vector2(-29.925415, 113.59999)
+rotation = 5.497787
+
+[node name="HalfCurvedRoad10" parent="." unique_id=1363864904 instance=ExtResource("5_q5p7b")]
+position = Vector2(33.082275, 109.272125)
+rotation = 6.2831855
+
+[node name="HalfCurvedRoad11" parent="." unique_id=1359522952 instance=ExtResource("5_q5p7b")]
+position = Vector2(78.2843, 154.34459)
+rotation = 3.9269907
 scale = Vector2(-1, 1)
 
-[node name="CurvedRoad8" parent="." unique_id=604825028 instance=ExtResource("4_wsccs")]
-position = Vector2(96.000015, 88.00001)
-rotation = -3.1415925
+[node name="HalfCurvedRoad12" parent="." unique_id=984015696 instance=ExtResource("5_q5p7b")]
+position = Vector2(141.83313, 160.22)
+rotation = 3.2690017
+scale = Vector2(-1, 1)
 
-[node name="CurvedRoad2" parent="." unique_id=2048473370 instance=ExtResource("4_wsccs")]
-position = Vector2(96, 56)
-rotation = -1.5707964
+[node name="HalfCurvedRoad13" parent="." unique_id=373950658 instance=ExtResource("5_q5p7b")]
+position = Vector2(188.24998, 124.11653)
+rotation = 5.497787
 
-[node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("5_setdq")]
-position = Vector2(175, 189)
+[node name="HalfCurvedRoad14" parent="." unique_id=1743758870 instance=ExtResource("5_q5p7b")]
+position = Vector2(251.57495, 123.481)
+rotation = 6.2831855
+
+[node name="StraightRoad29" parent="." unique_id=1232553261 instance=ExtResource("3_v1dmi")]
+position = Vector2(297.2392, 168.86194)
+rotation = 0.7853982
 
 [node name="Goal" type="Sprite2D" parent="." unique_id=1185543907]
-position = Vector2(116, 56)
+position = Vector2(333.27646, 208.83582)
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("6_t0ybl")
 
+[node name="PlayerCar" parent="." unique_id=721211325 instance=ExtResource("5_setdq")]
+position = Vector2(332.1939, 208.55154)
+rotation = 2.2811453
+scale = Vector2(0.2, 0.2)
+
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
+position = Vector2(157.1939, 19.551542)
+rotation = 2.2811453
+scale = Vector2(0.2, 0.2)

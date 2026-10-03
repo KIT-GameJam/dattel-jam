@@ -1,7 +1,7 @@
 extends HistoryObject
 
-const SPEED := 300.0
-const ROTATION_SPEED := 3.0
+const SPEED := 80.0
+const ROTATION_SPEED := 2.0
 
 func turn_left(angle: float) -> void:
 	rotation -= angle
