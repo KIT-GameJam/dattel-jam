@@ -60,7 +60,7 @@ position = Vector2(423, 511)
 rotation = 2.3561945
 
 [node name="StraightRoad10" parent="." unique_id=1826227598 instance=ExtResource("3_v1dmi")]
-position = Vector2(293, 190)
+position = Vector2(294, 191)
 rotation = 0.7853982
 
 [node name="StraightRoad11" parent="." unique_id=2028499684 instance=ExtResource("3_v1dmi")]
