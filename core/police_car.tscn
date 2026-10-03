@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6qvok2jqkvem"]
 
-[ext_resource type="PackedScene" uid="uid://cs073o3xu7y0u" path="res://core/ghost_car.tscn" id="1_bswkx"]
+[ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_bswkx"]
 [ext_resource type="Script" uid="uid://bqsie7q7qiwh5" path="res://core/police_car.gd" id="2_h61j7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_64ceh"]

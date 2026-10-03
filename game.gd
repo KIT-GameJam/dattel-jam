@@ -56,8 +56,7 @@ func _reload_level() -> void:
 func _start_level() -> void:
 	ready_ui.queue_free()
 	traffic_light_ui = traffic_light_scene.instantiate()
-	next_ghost_car = ghost_car_scenes.pick_random().instantiate()
-	if stage:
+	if next_ghost_car:
 		(func(): traffic_light_ui.update_text(next_ghost_car.ghost_name)).call_deferred()
 	add_child(traffic_light_ui)
 
@@ -67,6 +66,7 @@ func start_race() -> void:
 func end_level() -> void:
 	stage += 1
 	cars.pop_back()
+	next_ghost_car = ghost_car_scenes.pick_random().instantiate()
 	var new_car: HistoryObject = next_ghost_car
 	new_car.set_history(player.get_history())
 	for c in cars:
