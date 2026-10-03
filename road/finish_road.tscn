@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b321guvqpmj27"]
+
+[ext_resource type="PackedScene" uid="uid://owq0ora4pp6y" path="res://road/road.tscn" id="1_i16jy"]
+[ext_resource type="Script" uid="uid://hxbgd2xd7qmn" path="res://road/finish_road.gd" id="2_2tswr"]
+[ext_resource type="Texture2D" uid="uid://dbavv7xlx5yoe" path="res://assets/finish.svg" id="2_6abk4"]
+
+[node name="FinishRoad" unique_id=701535564 instance=ExtResource("1_i16jy")]
+script = ExtResource("2_2tswr")
+
+[node name="Sprite" parent="." index="0" unique_id=1170553723]
+position = Vector2(-10, 0)
+rotation = 1.5707964
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_6abk4")
+
+[node name="CollisionPolygon2D" parent="." index="1" unique_id=940481422]
+position = Vector2(-10, 0)
+polygon = PackedVector2Array(-32, -24, 32, -24, 32, 24, -32, 24)
+
+[node name="StartMarker" type="Marker2D" parent="." index="2" unique_id=2127074528]
+position = Vector2(-32, 0)

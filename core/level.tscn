@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dloqk5nqjojnn" path="res://assets/background/gras2.svg" id="3_b0hrx"]
 [ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="3_v1dmi"]
 [ext_resource type="PackedScene" uid="uid://3iwrbnnekfav" path="res://road/half_curved_road.tscn" id="5_q5p7b"]
-[ext_resource type="Texture2D" uid="uid://bvhkpag8n5ln8" path="res://assets/goal.png" id="6_t0ybl"]
 [ext_resource type="PackedScene" uid="uid://7wefaklk8eo0" path="res://core/walze.tscn" id="7_ppale"]
+[ext_resource type="PackedScene" uid="uid://b321guvqpmj27" path="res://road/finish_road.tscn" id="8_b0hrx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1dmi"]
 texture = ExtResource("2_bhxwn")
@@ -58,10 +58,6 @@ rotation = 1.5707964
 [node name="StraightRoad9" parent="." unique_id=1427562500 instance=ExtResource("3_v1dmi")]
 position = Vector2(423, 511)
 rotation = 2.3561945
-
-[node name="StraightRoad10" parent="." unique_id=1826227598 instance=ExtResource("3_v1dmi")]
-position = Vector2(294, 191)
-rotation = 0.7853982
 
 [node name="StraightRoad11" parent="." unique_id=2028499684 instance=ExtResource("3_v1dmi")]
 position = Vector2(-58, 144)
@@ -177,9 +173,8 @@ rotation = 6.2831855
 position = Vector2(248, 145)
 rotation = 0.7853982
 
-[node name="Goal" type="Sprite2D" parent="." unique_id=1185543907]
-position = Vector2(290, 187)
-rotation = 0.7853982
-texture = ExtResource("6_t0ybl")
-
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
+
+[node name="FinishRoad" parent="." unique_id=1860845999 instance=ExtResource("8_b0hrx")]
+position = Vector2(300, 197)
+rotation = 0.7853982

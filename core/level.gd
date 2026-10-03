@@ -1,9 +1,13 @@
 extends Node2D
 class_name Level
 
-@onready var walz : Path2D = $Walze
-@onready var goal: Node2D = $Goal
+@onready var walz: Path2D = $Walze
+var goal: FinishRoad
 var timestamp: float = 0.0
+
+func _ready() -> void:
+	goal = find_children("*", "FinishRoad").get(0)
+	create_joined_path()
 
 func _find_start_road() -> Road:
 	var query := PhysicsPointQueryParameters2D.new()
@@ -22,7 +26,7 @@ func get_timestamp() -> float:
 	return timestamp
 
 func get_start_position() -> Vector3:
-	return Vector3(goal.global_position.x, goal.global_position.y, goal.global_rotation)
+	return Vector3(goal.start_marker.global_position.x, goal.start_marker.global_position.y, goal.global_rotation)
 
 func create_joined_path() -> void:
 	var start_road := _find_start_road()
@@ -52,9 +56,6 @@ func create_joined_path() -> void:
 		var p_in := sorted_positions[i_prev] - pos
 		var p_out := sorted_positions[i_next] - pos
 		walz.curve.add_point(pos, p_in, p_out)
-
-func _ready() -> void:
-	create_joined_path()
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed_by_event("pause", event):
