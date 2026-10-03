@@ -8,5 +8,6 @@ func _process(delta: float) -> void:
 
 func add_history_entry():
 	pass
-func _physics_process(_delta: float) -> void:
-	pass
+
+func _physics_process(delta: float) -> void:
+	super._physics_process(delta)
