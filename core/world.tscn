@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qsol6h8df6nr" path="res://road/straight_road.tscn" id="4_wd0q5"]
 [ext_resource type="PackedScene" uid="uid://g1s6vg5w25v7" path="res://ui/overlay.tscn" id="5_wd0q5"]
 [ext_resource type="PackedScene" uid="uid://b5ymlu4py25pj" path="res://core/player_car.tscn" id="6_img2t"]
+[ext_resource type="Texture2D" uid="uid://bvhkpag8n5ln8" path="res://assets/goal.png" id="7_e2arr"]
 
 [sub_resource type="Animation" id="Animation_q7g5t"]
 length = 0.001
@@ -111,3 +112,7 @@ position = Vector2(658, 511)
 
 [node name="WalzPfad" type="Path2D" parent="." unique_id=1372904200]
 curve = SubResource("Curve2D_img2t")
+
+[node name="Goal" type="Sprite2D" parent="." unique_id=1185543907]
+position = Vector2(116, 56)
+texture = ExtResource("7_e2arr")
