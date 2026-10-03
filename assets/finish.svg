@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="finish.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.88339496"
+     inkscape:cx="101.31369"
+     inkscape:cy="316.95902"
+     inkscape:window-width="1840"
+     inkscape:window-height="1017"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#1a1a1a;stroke-width:1.76609"
+       d="M 64,0 H 447.99999 L 448,512 H 64 Z"
+       sodipodi:insensitive="true"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="path4-7-2"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#ffffff;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       d="M 231.20117 -228.87907 L 231.20117 -173.87882 L 261.20117 -173.87882 L 261.20117 -228.87907 L 231.20117 -228.87907 z M 246.20117 -37.878186 L 231.20117 -27.878139 L 187.86523 1.0126197 L 209.0791 15.155263 L 231.20117 0.40714814 L 231.20117 82.122371 L 261.20117 82.122371 L 261.20117 0.40714814 L 283.32324 15.155263 L 304.53711 1.0126197 L 261.20117 -27.878139 L 246.20117 -37.878186 z M 231.20117 228.12305 L 231.20117 283.1233 L 261.20117 283.1233 L 261.20117 228.12305 L 231.20117 228.12305 z "
+       transform="matrix(0.66666667,0,0,0.99999536,91.865886,228.87801)" />
+    <g
+       id="g15"
+       transform="translate(0,127)">
+      <g
+         id="g16"
+         style="display:inline"
+         transform="matrix(0.5,0,0,0.5,32,220)">
+        <path
+           id="path4"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+           d="M 128,64 H 64 V 0 h 64 z" />
+        <path
+           id="path6"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+           d="m 128,64 h 64 v 64 h -64 z" />
+        <path
+           id="path8"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+           d="M 256,64 H 192 V 0 h 64 z" />
+        <path
+           id="path10"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+           d="m 256,64 h 64 v 64 h -64 z" />
+        <path
+           id="path12"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+           d="M 384,64 H 320 V 0 h 64 z" />
+        <path
+           id="path14"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+           d="m 384,64 h 64 v 64 h -64 z" />
+      </g>
+      <g
+         id="g14">
+        <g
+           id="g13"
+           style="display:inline"
+           transform="matrix(0.5,0,0,0.5,224,220)">
+          <path
+             id="path3"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+             d="M 128,64 H 64 V 0 h 64 z" />
+          <path
+             id="path5"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+             d="m 128,64 h 64 v 64 h -64 z" />
+          <path
+             id="path7"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+             d="M 256,64 H 192 V 0 h 64 z" />
+          <path
+             id="path9"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+             d="m 256,64 h 64 v 64 h -64 z" />
+          <path
+             id="path11"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+             d="M 384,64 H 320 V 0 h 64 z" />
+          <path
+             id="path13"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0763"
+             d="m 384,64 h 64 v 64 h -64 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
