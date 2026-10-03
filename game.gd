@@ -5,7 +5,9 @@ var round: int = 0
 var max_rounds = 3
 
 const level_scene: PackedScene = preload("res://core/level.tscn")
+const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
 var level: Level
+var ready_ui: Node
 
 func _ready() -> void:
 	_reload_level()
@@ -15,10 +17,12 @@ func _reload_level() -> void:
 		level.queue_free()
 	level = level_scene.instantiate()
 	add_child(level)
-	return
+	ready_ui = ready_scene.instantiate()
+	add_child(ready_ui)
 	level.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _start_level() -> void:
+	ready_ui.queue_free()
 	level.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _end_level() -> void:
