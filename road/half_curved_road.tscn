@@ -15,7 +15,6 @@ point_count = 3
 texture = ExtResource("2_6dmyd")
 
 [node name="CollisionPolygon2D" parent="." index="1" unique_id=940481422]
-build_mode = 1
 polygon = PackedVector2Array(-32, -14, 1, -14, 33, 12, 16, 31, 0, 16, -32, 16)
 
 [node name="Path2D" parent="." index="2" unique_id=2042994023]
