@@ -19,7 +19,7 @@ func write_history():
 	_history.append(entry)
 
 func read_history() -> UnpackedHistoryEntry:
-	var current_entry: HistoryEntry = _history.get(_read_index)
+	var current_entry: HistoryEntry = _history[_read_index] if _read_index < len(_history) else null
 	var timestamp = get_timestamp()
 	while current_entry and timestamp >= current_entry.timestamp:
 		_read_index += 1

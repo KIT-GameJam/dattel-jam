@@ -22,7 +22,7 @@ func get_timestamp() -> float:
 	return timestamp
 
 func get_start_position() -> Vector3:
-	return Vector3(global_position.x, global_position.y, global_rotation)
+	return Vector3(goal.global_position.x, goal.global_position.y, goal.global_rotation)
 
 func create_joined_path() -> void:
 	var path := _find_start_road().path
