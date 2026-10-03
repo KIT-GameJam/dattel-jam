@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
-   sodipodi:docname="gay_road.svg"
+   sodipodi:docname="curved_road.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="0.59652374"
-     inkscape:cx="233.8549"
-     inkscape:cy="471.06256"
+     inkscape:zoom="0.84361196"
+     inkscape:cx="63.417783"
+     inkscape:cy="598.61645"
      inkscape:window-width="1840"
      inkscape:window-height="1017"
      inkscape:window-x="0"
@@ -42,12 +42,16 @@
        id="circle1"
        style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;fill:#1a1a1a;fill-opacity:1"
        d="M 512 64 C 266.8506 64 64 266.8506 64 512 L 448 512 C 448 474.37961 474.37961 448 512 448 L 512 64 z " />
+    <path
+       id="rect4"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.52998;stroke-linecap:round;stroke-opacity:1"
+       d="m 383.67954,290.46069 -53.87662,-11.05975 -4.02166,19.59151 34.28512,7.03803 -7.0379,34.28515 19.5915,4.02173 z" />
     <g
        id="g3"
        inkscape:label="line"
-       style="fill:none;stroke:#ffffff;stroke-opacity:1">
+       style="display:inline;fill:none;stroke:#ffffff;stroke-opacity:1">
       <path
-         style="display:inline;fill:none;stroke:#ffffff;stroke-width:20;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+         style="display:inline;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:20;stroke-dasharray:none;stroke-opacity:1"
          id="path1"
          sodipodi:type="arc"
          sodipodi:cx="512"
