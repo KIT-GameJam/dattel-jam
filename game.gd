@@ -17,7 +17,7 @@ var level: Level
 var ready_ui: Node
 var traffic_light_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
-const car_scene: PackedScene = preload("res://core/car.tscn")
+const car_scene: PackedScene = preload("res://core/ghost_car.tscn")
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
 var is_race_started := false
