@@ -60,4 +60,5 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _physics_process(delta: float) -> void:
-	timestamp += delta
+	if Global.get_game().is_race_started:
+		timestamp += delta
