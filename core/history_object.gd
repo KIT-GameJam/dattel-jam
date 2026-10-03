@@ -32,7 +32,8 @@ func read_history() -> UnpackedHistoryEntry:
 	if current_entry:
 		var delta_t = current_entry.timestamp - timestamp
 		vel = (current_entry.pos - global_position)/delta_t
-		rot = (current_entry.rot - global_rotation)/delta_t
+		# rot = (current_entry.rot - global_rotation)/delta_t # fehlerbehaftet
+		rot = current_entry.rot
 	return UnpackedHistoryEntry.new(vel, rot)
 
 func set_history(hist: Array [HistoryEntry]):

@@ -1,8 +1,8 @@
 extends Node
 class_name Game
 
-var round: int = 0
-var max_rounds = 3
+var stage: int = 0
+var max_stages = 3
 
 const level_scene: PackedScene = preload("res://core/level.tscn")
 const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
@@ -25,7 +25,6 @@ func _reload_level() -> void:
 		level.queue_free()
 	level = level_scene.instantiate()
 	add_child(level)
-	level.process_mode = Node.PROCESS_MODE_DISABLED
 	var temp = level.get_start_position()
 	var start_pos = Vector2(temp.x, temp.y)
 	var start_rot = temp.z + PI/2
@@ -36,6 +35,9 @@ func _reload_level() -> void:
 		c.global_rotation = start_rot
 		level.add_child(c)
 		c.reset_read_index()
+		
+	level.process_mode = Node.PROCESS_MODE_DISABLED
+
 	ready_ui = ready_scene.instantiate()
 	add_child(ready_ui)
 
@@ -44,6 +46,7 @@ func _start_level() -> void:
 	level.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _end_level() -> void:
+	stage += 1
 	cars.pop_back()
 	var new_car: HistoryObject =  car_scene.instantiate()
 	new_car.set_history(player.get_history())
@@ -51,4 +54,8 @@ func _end_level() -> void:
 		level.remove_child(c)
 	player.queue_free()
 	cars.append(new_car)
-	_reload_level()
+	if stage <= max_stages:
+		_reload_level()
+	else:
+		pass
+		# end_screen()
