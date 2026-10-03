@@ -1,7 +1,7 @@
 extends Node2D
 class_name World
 
-@onready var walz_pfad : Path2D = $WalzPfad
+@onready var walz : Path2D = $Walze
 @onready var goal: Node2D = $Goal
 
 func _find_start_road() -> Road:
@@ -35,7 +35,7 @@ func create_joined_path() -> void:
 			var pin := path.curve.get_point_in(point_index)
 			var pout := path.curve.get_point_out(point_index)
 			last_point = path.to_global(pos)
-			walz_pfad.curve.add_point(
+			walz.curve.add_point(
 				last_point,
 				pin,
 				pout,

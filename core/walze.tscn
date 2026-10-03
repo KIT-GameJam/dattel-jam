@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://7wefaklk8eo0"]
+
+[ext_resource type="Texture2D" uid="uid://rq0fmlpwc54m" path="res://assets/walze.png" id="1_holw3"]
+[ext_resource type="Script" uid="uid://b5goqjtpjjkh2" path="res://core/walze.gd" id="1_mu7c4"]
+
+[sub_resource type="Curve2D" id="Curve2D_nfpf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plrnn"]
+size = Vector2(32, 32)
+
+[node name="Walze" type="Path2D" unique_id=378615465]
+curve = SubResource("Curve2D_nfpf6")
+script = ExtResource("1_mu7c4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1623265321]
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D" unique_id=673041382]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=1493750920]
+texture = ExtResource("1_holw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D" unique_id=2049104106]
+shape = SubResource("RectangleShape2D_plrnn")
