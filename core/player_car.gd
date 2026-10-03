@@ -62,7 +62,8 @@ func pausable_physics_process(delta: float) -> void:
 	write_history()
 
 func die() -> void:
-	# "sieht gut aus" - Niklas
+	# Keiner:
+	# Niklas: "sieht gut aus"
 	Global.get_level().end_round()
 
 func _ready() -> void:

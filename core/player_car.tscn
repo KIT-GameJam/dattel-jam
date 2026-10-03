@@ -68,5 +68,6 @@ shape = SubResource("RectangleShape2D_64ceh")
 
 [node name="BrummPlayer" type="AudioStreamPlayer2D" parent="." unique_id=101978879]
 pitch_scale = 100.0
+bus = &"Motor"
 
 [connection signal="finished" from="BrummPlayer" to="." method="_on_brumm_player_finished"]
