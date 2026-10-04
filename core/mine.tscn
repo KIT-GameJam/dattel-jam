@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgv2i4vnh1b8p"]
 
 [ext_resource type="Texture2D" uid="uid://c6rouil6sfxhp" path="res://assets/mine.svg" id="1_ckvdg"]
+[ext_resource type="Script" uid="uid://7k0rfccwfp4s" path="res://core/mine.gd" id="1_uo0we"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plrnn"]
 radius = 25.019993
@@ -52,10 +53,47 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.9933894, 0.49586004)
 
+[sub_resource type="Animation" id="Animation_jd6h1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hnu3w"]
+resource_name = "öl"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jggay"]
+_data = {
+&"RESET": SubResource("Animation_jd6h1"),
+&"öl": SubResource("Animation_hnu3w")
+}
+
 [node name="Mine" type="Area2D" unique_id=2029854056]
 scale = Vector2(0.05, 0.05)
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("1_uo0we")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1186510832]
 texture = ExtResource("1_ckvdg")
@@ -75,3 +113,6 @@ modulate = Color(0.745151, 2.5749953e-06, 3.85046e-07, 1)
 position = Vector2(-4.7683716e-07, 4.7683716e-07)
 scale = Vector2(0.4765625, 0.4765625)
 texture = SubResource("GradientTexture2D_plrnn")
+
+[node name="Öl" type="AnimationPlayer" parent="." unique_id=1460977818]
+libraries/ = SubResource("AnimationLibrary_jggay")

@@ -10,6 +10,42 @@ size = Vector2(8, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64ceh"]
 size = Vector2(2, 2)
 
+[sub_resource type="Animation" id="Animation_jmafn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707963267948966]
+}
+
+[sub_resource type="Animation" id="Animation_p40vn"]
+resource_name = "öl"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5707963267948966, 10.995574287564276]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5o7s2"]
+_data = {
+&"RESET": SubResource("Animation_jmafn"),
+&"öl": SubResource("Animation_p40vn")
+}
+
 [node name="PlayerCar" type="CharacterBody2D" unique_id=721211325]
 z_index = 1
 scale = Vector2(0.75, 0.75)
@@ -76,6 +112,9 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyArea" unique_id=1564226519]
 shape = SubResource("RectangleShape2D_tijfq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=420096705]
+libraries/ = SubResource("AnimationLibrary_5o7s2")
 
 [connection signal="finished" from="BrummPlayer" to="." method="_on_brumm_player_finished"]
 [connection signal="area_entered" from="DeadlyArea" to="." method="_on_deadly_area_entered"]

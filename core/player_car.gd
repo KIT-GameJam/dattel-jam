@@ -15,6 +15,7 @@ const BUMM: PackedScene = preload("res://core/explosion.tscn")
 @onready var detection_area: Area2D = $DetectionArea
 @onready var tires: Array[Sprite2D] = [$Sprite2D/Tire, $Sprite2D/Tire2]
 @onready var brumm: AudioStreamPlayer2D = $BrummPlayer
+@onready var spin: AnimationPlayer = $AnimationPlayer
 var speed := 0.0
 var curr_tire_rot: int = 0
 var gas_pedal_factor := 1.0
@@ -84,7 +85,14 @@ func start_brumm() -> void:
 	brumm.pitch_scale = 0.6 + speed * 0.006 + randf_range(-0.05, 0.05)
 	brumm.play()
 
-func _on_deadly_area_entered(_area: Area2D) -> void:
-	var explosion: Explosion = BUMM.instantiate()
-	add_child(explosion)
-	speed = 0.0
+func _on_deadly_area_entered(area: Area2D) -> void:
+	if area is Mine:
+		var explosion: Explosion = BUMM.instantiate()
+		add_child(explosion)
+		speed = 0.0
+		
+	if area is Öl:
+		spin.play("öl")
+		speed *= 0.45;
+	
+	
