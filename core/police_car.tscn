@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_725iu"]
 [ext_resource type="Texture2D" uid="uid://bq8y0o0tddff6" path="res://assets/car_police.svg" id="2_7vr5m"]
 [ext_resource type="Shader" uid="uid://dcuqwfyualrwm" path="res://core/police_car_lights.gdshader" id="3_f3jys"]
+[ext_resource type="Shader" uid="uid://cpfro8f0qwvyw" path="res://core/barrier.gdshader" id="4_nwtmi"]
 [ext_resource type="AudioStream" uid="uid://bt350h41lakm1" path="res://assets/sfx/ALAAAAARRMM.ogg" id="4_rul1k"]
+[ext_resource type="Texture2D" uid="uid://d3p4mv6fnjd0" path="res://assets/stop.svg" id="5_qbkv6"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_725iu"]
 a = Vector2(-64, 0)
@@ -19,6 +21,9 @@ colors = PackedColorArray(1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_plrnn"]
 gradient = SubResource("Gradient_rul1k")
 width = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_plrnn"]
+shader = ExtResource("4_nwtmi")
 
 [node name="PoliceCar" unique_id=721211325 instance=ExtResource("1_725iu")]
 ghost_name = "Verkehrspolizei"
@@ -39,7 +44,15 @@ material = SubResource("ShaderMaterial_4jq5w")
 scale = Vector2(77.833336, 77.833336)
 texture = SubResource("GradientTexture1D_plrnn")
 
-[node name="Wii U" type="AudioStreamPlayer2D" parent="." index="4" unique_id=208055845]
+[node name="BarrierVisual" type="Sprite2D" parent="." index="4" unique_id=1399896513]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_plrnn")
+position = Vector2(0, -81.333336)
+scale = Vector2(0.286976, 0.286976)
+texture = ExtResource("5_qbkv6")
+
+[node name="Wii U" type="AudioStreamPlayer2D" parent="." index="5" unique_id=208055845]
 stream = ExtResource("4_rul1k")
 autoplay = true
 attenuation = 12.0
