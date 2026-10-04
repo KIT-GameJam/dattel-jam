@@ -11,6 +11,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_audio_stream_player_2d_finished() -> void:
 	audio_finished = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if audio_finished and animation_finished:
 		queue_free()

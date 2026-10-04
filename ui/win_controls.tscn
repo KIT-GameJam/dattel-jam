@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bcixjjmma2gpx"]
+
+[ext_resource type="Script" uid="uid://csi1hoqejufxd" path="res://ui/win_controls.gd" id="1_xxk0l"]
+[ext_resource type="Script" uid="uid://djsakavgyhj32" path="res://ui/wobbly_letters_effect.gd" id="2_7iilq"]
+[ext_resource type="PackedScene" uid="uid://d170ehsn2fbbl" path="res://ui/button.tscn" id="3_ib8r8"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_4jq5w"]
+script = ExtResource("2_7iilq")
+metadata/_custom_type_script = "uid://djsakavgyhj32"
+
+[node name="WinControls" type="VBoxContainer" unique_id=1528948924]
+offset_right = 200.0
+offset_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 20
+script = ExtResource("1_xxk0l")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=752540801]
+layout_mode = 2
+bbcode_enabled = true
+text = "[rainbow freq=0.1 speed=2.0 sat=0.6 val=0.8][wobbly_letters][font_size=100]YOU WIN![/font_size][/wobbly_letters][/rainbow]"
+fit_content = true
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_4jq5w")]
+
+[node name="Description" type="Label" parent="." unique_id=82120160]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="InfinityButton" parent="." unique_id=274197061 instance=ExtResource("3_ib8r8")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "∞ INFINITY MODE ∞"
+
+[node name="RestartButton" parent="." unique_id=1177736916 instance=ExtResource("3_ib8r8")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[node name="BackToTitleButton" parent="." unique_id=1274416860 instance=ExtResource("3_ib8r8")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit to Title Screen"
+
+[connection signal="on_click" from="InfinityButton" to="." method="_on_infinity_button_on_click"]
+[connection signal="on_click" from="RestartButton" to="." method="_on_restart_button_on_click"]
+[connection signal="on_click" from="BackToTitleButton" to="." method="_on_back_to_title_button_on_click"]
