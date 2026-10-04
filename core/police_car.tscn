@@ -7,9 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://bt350h41lakm1" path="res://assets/sfx/ALAAAAARRMM.ogg" id="4_rul1k"]
 [ext_resource type="Texture2D" uid="uid://d3p4mv6fnjd0" path="res://assets/stop.svg" id="5_qbkv6"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_725iu"]
-a = Vector2(-64, 0)
-b = Vector2(64, 0)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_plrnn"]
+shader = ExtResource("4_nwtmi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvtvq"]
+size = Vector2(100, 20)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4jq5w"]
 shader = ExtResource("3_f3jys")
@@ -22,35 +24,32 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_rul1k")
 width = 1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_plrnn"]
-shader = ExtResource("4_nwtmi")
-
 [node name="PoliceCar" unique_id=721211325 instance=ExtResource("1_725iu")]
 ghost_name = "Verkehrspolizei"
 
-[node name="Sprite2D" parent="." index="1" unique_id=2103895134]
+[node name="BarrierVisual" type="Sprite2D" parent="." index="0" unique_id=1399896513]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_plrnn")
+position = Vector2(1.0263437e-14, 61.333336)
+rotation = -3.1415925
+scale = Vector2(0.28697604, 0.28697604)
+texture = ExtResource("5_qbkv6")
+
+[node name="Sprite2D" parent="." index="2" unique_id=2103895134]
 texture = ExtResource("2_7vr5m")
 
-[node name="Barrier" type="Area2D" parent="." index="2" unique_id=807912216]
+[node name="Barrier" type="Area2D" parent="." index="3" unique_id=807912216]
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" index="0" unique_id=211625945]
-position = Vector2(0, -10)
-shape = SubResource("SegmentShape2D_725iu")
+shape = SubResource("RectangleShape2D_tvtvq")
 
-[node name="Lights" type="Sprite2D" parent="." index="3" unique_id=356564473]
+[node name="Lights" type="Sprite2D" parent="." index="4" unique_id=356564473]
 material = SubResource("ShaderMaterial_4jq5w")
 scale = Vector2(77.833336, 77.833336)
 texture = SubResource("GradientTexture1D_plrnn")
-
-[node name="BarrierVisual" type="Sprite2D" parent="." index="4" unique_id=1399896513]
-texture_filter = 2
-texture_repeat = 2
-material = SubResource("ShaderMaterial_plrnn")
-position = Vector2(0, -81.333336)
-scale = Vector2(0.286976, 0.286976)
-texture = ExtResource("5_qbkv6")
 
 [node name="Wii U" type="AudioStreamPlayer2D" parent="." index="5" unique_id=208055845]
 stream = ExtResource("4_rul1k")

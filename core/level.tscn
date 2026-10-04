@@ -194,8 +194,8 @@ rotation = 6.2831855
 position = Vector2(248, 145)
 rotation = 0.7853982
 
-[node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
-
 [node name="FinishRoad" parent="." unique_id=1860845999 instance=ExtResource("8_b0hrx")]
 position = Vector2(300, 197)
 rotation = 0.7853982
+
+[node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]

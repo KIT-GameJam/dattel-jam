@@ -41,13 +41,14 @@ func create_joined_path() -> void:
 		sorted_positions.append(roads.pop_at(closest_road_idx).global_position)
 
 	var num_positions := len(sorted_positions)
-	for i in range(num_positions):
+	for i in range(num_positions + 1):
 		var i_prev := (i - 1 + num_positions) % num_positions
 		var i_next := (i + 1) % num_positions
-		var pos := sorted_positions[i]
+		var pos := sorted_positions[i % num_positions]
 		var p_in := sorted_positions[i_prev] - pos
 		var p_out := sorted_positions[i_next] - pos
 		walz.curve.add_point(pos, p_in, p_out)
+	walz.curve_ready()
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed_by_event("pause", event):

@@ -1,12 +1,33 @@
 [gd_scene format=3 uid="uid://7wefaklk8eo0"]
 
-[ext_resource type="Texture2D" uid="uid://rq0fmlpwc54m" path="res://assets/walze.png" id="1_holw3"]
 [ext_resource type="Script" uid="uid://b5goqjtpjjkh2" path="res://core/walze.gd" id="1_mu7c4"]
+[ext_resource type="Shader" uid="uid://cpfro8f0qwvyw" path="res://core/barrier.gdshader" id="2_0srvd"]
+[ext_resource type="Texture2D" uid="uid://d3p4mv6fnjd0" path="res://assets/stop.svg" id="3_dvn2y"]
+[ext_resource type="Texture2D" uid="uid://bq8y0o0tddff6" path="res://assets/car_police.svg" id="4_un426"]
+[ext_resource type="Shader" uid="uid://dcuqwfyualrwm" path="res://core/police_car_lights.gdshader" id="5_uiwrv"]
+[ext_resource type="AudioStream" uid="uid://bt350h41lakm1" path="res://assets/sfx/ALAAAAARRMM.ogg" id="6_4smse"]
 
 [sub_resource type="Curve2D" id="Curve2D_nfpf6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_plrnn"]
-size = Vector2(32, 32)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k50l5"]
+shader = ExtResource("2_0srvd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwiga"]
+size = Vector2(8, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_864xc"]
+size = Vector2(100, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ep8i"]
+shader = ExtResource("5_uiwrv")
+
+[sub_resource type="Gradient" id="Gradient_rul1k"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_823ap"]
+gradient = SubResource("Gradient_rul1k")
+width = 1
 
 [node name="Walze" type="Path2D" unique_id=378615465]
 curve = SubResource("Curve2D_nfpf6")
@@ -15,9 +36,39 @@ script = ExtResource("1_mu7c4")
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1623265321]
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D" unique_id=673041382]
+rotation = 1.5707964
 
-[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=1493750920]
-texture = ExtResource("1_holw3")
+[node name="BarrierVisual" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=785439089]
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_k50l5")
+position = Vector2(1.0263437e-14, 61.333336)
+rotation = -3.1415925
+scale = Vector2(0.28697604, 0.28697604)
+texture = ExtResource("3_dvn2y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D" unique_id=2049104106]
-shape = SubResource("RectangleShape2D_plrnn")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PathFollow2D/Area2D" unique_id=1907055053]
+shape = SubResource("RectangleShape2D_pwiga")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=301121867]
+use_parent_material = true
+rotation = -1.5707964
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_un426")
+
+[node name="Barrier" type="Area2D" parent="PathFollow2D/Area2D" unique_id=1775052538]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D/Barrier" unique_id=1328092862]
+shape = SubResource("RectangleShape2D_864xc")
+
+[node name="Lights" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=688640078]
+material = SubResource("ShaderMaterial_4ep8i")
+scale = Vector2(77.833336, 77.833336)
+texture = SubResource("GradientTexture1D_823ap")
+
+[node name="Wii U" type="AudioStreamPlayer2D" parent="PathFollow2D/Area2D" unique_id=1182864747]
+stream = ExtResource("6_4smse")
+autoplay = true
+attenuation = 12.0
