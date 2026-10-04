@@ -2,7 +2,7 @@ class_name PlayerCar
 extends HistoryObject
 
 const MAX_SPEED := 150.0
-const STAGE_SPEED_MODIFIER := 1.04
+const STAGE_SPEED_MODIFIER := 1.06
 const ROTATION_SPEED := 1.8
 const ACCEL := 60.0
 const SPEED_DOWN_FACTOR := 0.2
