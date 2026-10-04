@@ -127,7 +127,8 @@ text = "X"
 [node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/VBoxContainer" unique_id=761120705]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-text = "Dies das Tutorial"
+text = "Als zeitreisender Rennfahrer und damit temporaler Verbrecher wirst du von der Polizei gejagt. Nach jeder Runde musst du allerdings zusätzlich zur Polizei gegen die Geister deiner Vergangenheit spielen. Allerdings Vorsicht! Die Ölflecken und Minen deiner Vergangenheit könnten dich heimsuchen. Steuere mit Pfeiltasten oder WASD. Mit der S- oder Runter-Taste kannst du abbremsen.
+Viel Erfolg Zeitreisender!"
 fit_content = true
 
 [connection signal="meta_clicked" from="TopContainer/VBoxContainer/Footer/MarginContainer/FooterText" to="." method="_on_footer_text_meta_clicked"]
