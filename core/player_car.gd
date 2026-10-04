@@ -9,9 +9,8 @@ const SPEED_DOWN_FACTOR := 0.2
 const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
 const TIRE_ANGLE: float = deg_to_rad(30.0);
 const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")
-
-
 const BRUMM2: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm2.ogg")
+const BUMM: PackedScene = preload("res://core/explosion.tscn")
 
 @onready var detection_area: Area2D = $DetectionArea
 @onready var tires: Array[Sprite2D] = [$Sprite2D/Tire, $Sprite2D/Tire2]
@@ -86,4 +85,6 @@ func start_brumm() -> void:
 	brumm.play()
 
 func _on_deadly_area_entered(_area: Area2D) -> void:
-	die.call_deferred()
+	var explosion: Explosion = BUMM.instantiate()
+	add_child(explosion)
+	speed = 0.0

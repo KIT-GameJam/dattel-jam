@@ -33,9 +33,7 @@ func is_behind_walz(point: Vector2) -> bool:
 	if progress < walz_progress: return true
 	var dist := progress - walz_progress
 	if dist >= 0.05:
-		print("STRONG rubber band")
 		rubber_band = 2
 	elif dist >= 0.02:
-		print("soft rubber band")
 		rubber_band = 1
 	return false
