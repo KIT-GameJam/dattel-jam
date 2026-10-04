@@ -1,9 +1,10 @@
 extends Node2D
 class_name Level
 
-@onready var walz: Path2D = $Walze
+@onready var walz: Walze = $Walze
 var goal: FinishRoad
 var timestamp: float = 0.0
+var started_timestamping = false
 
 func _ready() -> void:
 	goal = find_children("*", "FinishRoad").get(0)
@@ -41,19 +42,24 @@ func create_joined_path() -> void:
 		sorted_positions.append(roads.pop_at(closest_road_idx).global_position)
 
 	var num_positions := len(sorted_positions)
-	for i in range(num_positions):
+	for i in range(num_positions + 1):
 		var i_prev := (i - 1 + num_positions) % num_positions
 		var i_next := (i + 1) % num_positions
-		var pos := sorted_positions[i]
+		var pos := sorted_positions[i % num_positions]
 		var p_in := sorted_positions[i_prev] - pos
 		var p_out := sorted_positions[i_next] - pos
 		walz.curve.add_point(pos, p_in, p_out)
+	walz.curve_ready()
+
+func is_behind_walz(point: Vector2) -> bool:
+	return walz.is_behind_walz(point)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed_by_event("pause", event):
 		Global.pause()
 		get_viewport().set_input_as_handled()
-
+func start_timestamping():
+	started_timestamping = true
 func _physics_process(delta: float) -> void:
-	if Global.get_game().is_race_started:
+	if started_timestamping:
 		timestamp += delta

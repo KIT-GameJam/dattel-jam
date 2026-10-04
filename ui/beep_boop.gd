@@ -10,9 +10,6 @@ var step := 0
 var is_done := false
 
 func _ready() -> void:
-	if Global.DEBUG:
-		# reduce wait time in debug mode
-		timer.wait_time = 0.4
 	timer.start()
 	traffic_lights.assign(container.get_children())
 
@@ -27,6 +24,8 @@ func _next_level():
 		tween.tween_callback(queue_free)
 		return
 	step += 1
+	if step >= len(traffic_lights) - Global.get_stage()*1.25:
+		Global.start_timestamping()
 	if step <= len(traffic_lights):
 		beep.play()
 		traffic_lights[len(traffic_lights) - step].make_red()

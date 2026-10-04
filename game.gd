@@ -22,13 +22,13 @@ var ready_ui: Node
 var traffic_light_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const ghost_car_scenes: Array[PackedScene] = [
-	preload("res://core/minen_leger.tscn"),
-	preload("res://core/police_car.tscn"),
+	preload("res://core/ghost_car.tscn"),
 ]
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
 var is_race_started := false
 var next_ghost_car: GhostCar = null
+var game_over_message := ""
 
 func _ready() -> void:
 	_reload_level()
@@ -69,8 +69,8 @@ func _start_level() -> void:
 func start_race() -> void:
 	is_race_started = true
 
-func end_level() -> void:
-	if lives <= 0:
+func end_level(lost: bool = false) -> void:
+	if lost:
 		game_over()
 		return
 	if ready_ui:
@@ -86,6 +86,7 @@ func end_level() -> void:
 	cars.append(new_car)
 	_reload_level()
 
-func game_over() -> void:
+func game_over(msg: String = "") -> void:
+	game_over_message = msg
 	add_child(game_over_scene.instantiate())
 	Global.get_game_manager().pause(false)

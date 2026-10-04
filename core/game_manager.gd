@@ -32,6 +32,12 @@ func start() -> void:
 	current_game = game_scene.instantiate()
 	game_container.add_child(current_game)
 
+func restart() -> void:
+	game_container.remove_child(current_game)
+	current_game.queue_free()
+	current_game = null
+	start()
+
 func pause(show_menu: bool = true) -> void:
 	if show_menu:
 		pause_menu.show()
