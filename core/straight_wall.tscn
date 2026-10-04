@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1uwawg08cey7"]
+
+[ext_resource type="Texture2D" uid="uid://bdylmungdcke7" path="res://assets/rand_straight.svg" id="1_js65e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plrnn"]
+size = Vector2(70, 448)
+
+[node name="StraightWall" type="StaticBody2D" unique_id=2040264841]
+scale = Vector2(0.12, 0.12)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1079408362]
+texture = ExtResource("1_js65e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948707597]
+shape = SubResource("RectangleShape2D_plrnn")

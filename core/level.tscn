@@ -44,6 +44,9 @@ sources/2 = SubResource("TileSetAtlasSource_nuv7q")
 sources/3 = SubResource("TileSetAtlasSource_pj88p")
 sources/4 = SubResource("TileSetAtlasSource_u2kg0")
 
+[sub_resource type="Curve2D" id="Curve2D_wsccs"]
+resource_local_to_scene = true
+
 [node name="Level" type="Node2D" unique_id=435221483]
 script = ExtResource("1_bhxwn")
 
@@ -199,3 +202,4 @@ position = Vector2(300, 197)
 rotation = 0.7853982
 
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
+curve = SubResource("Curve2D_wsccs")
