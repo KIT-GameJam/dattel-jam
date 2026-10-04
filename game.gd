@@ -23,7 +23,6 @@ var traffic_light_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const ghost_car_scenes: Array[PackedScene] = [
 	preload("res://core/minen_leger.tscn"),
-	preload("res://core/police_car.tscn"),
 ]
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
