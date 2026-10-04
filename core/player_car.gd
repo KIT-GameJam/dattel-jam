@@ -17,6 +17,7 @@ const BRUMM2: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm2.ogg")
 var speed := 0.0
 var is_turning := false
 var curr_tire_rot: int = 0
+var gas_pedal_factor := 1.0
 
 func turn_left(angle: float) -> void:
 	rotation -= angle
@@ -41,6 +42,12 @@ func process_input(delta: float) -> void:
 		turn_right(ROTATION_SPEED * delta)
 		rotate_tire(1)
 		is_turning = true
+	if Input.is_action_pressed("up"):
+		gas_pedal_factor = 1.5
+	elif Input.is_action_pressed("down"):
+		gas_pedal_factor = 0.7
+	else:
+		gas_pedal_factor = 1.0 
 
 func pausable_physics_process(delta: float) -> void:
 	process_input(delta)
@@ -49,7 +56,7 @@ func pausable_physics_process(delta: float) -> void:
 		if is_instance_of(area, Road):
 			ground_speed = area.drive_speed
 			break
-	var max_speed: float = ground_speed * MAX_SPEED
+	var max_speed: float = ground_speed * MAX_SPEED * gas_pedal_factor
 	if is_turning:
 		max_speed *= TURNING_MAX_SPEED_DAMP
 	speed += ACCEL * delta
