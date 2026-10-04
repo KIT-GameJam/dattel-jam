@@ -20,6 +20,5 @@ texture = ExtResource("2_qminj")
 
 [node name="MinenTimer" type="Timer" parent="." index="3" unique_id=1583005482]
 wait_time = 3.5
-autostart = true
 
 [connection signal="timeout" from="MinenTimer" to="." method="_on_minen_timer_timeout"]

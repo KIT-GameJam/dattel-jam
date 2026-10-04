@@ -45,7 +45,7 @@ func process_input(delta: float) -> void:
 		gas_pedal_factor = 1.0
 
 func _physics_process(delta: float) -> void:
-	if !Global.is_race_started(): return
+	if not Global.is_race_started(): return
 	process_input(delta)
 	var ground_speed := 0.18
 	for area in detection_area.get_overlapping_areas():

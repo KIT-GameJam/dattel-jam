@@ -1,6 +1,8 @@
 extends Node
 class_name Game
 
+signal race_start
+
 @onready var overlay: Overlay = $Overlay
 
 var stage: int = 0:
@@ -75,6 +77,7 @@ func _start_level() -> void:
 
 func start_race() -> void:
 	is_race_started = true
+	race_start.emit()
 
 func end_level(lost: bool = false) -> void:
 	if lost:
