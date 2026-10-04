@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name HistoryObject
 
-var _history: Array [HistoryEntry] = []
+var _history: Array[HistoryEntry] = []
 var _read_index: int = 0
 
 @export var uses_ghost_shader := true
@@ -10,9 +10,6 @@ var _read_index: int = 0
 func _ready() -> void:
 	if not uses_ghost_shader:
 		material = null
-
-func get_timestamp() -> float:
-	return Global.get_timestamp()
 
 func reset_read_index():
 	_read_index = 0
@@ -29,32 +26,36 @@ func _physics_process(delta: float) -> void:
 
 func write_history():
 	var entry: HistoryEntry = HistoryEntry.new(
-		get_timestamp(),
+		Global.get_timestamp(),
 		global_position,
-		global_rotation)
+		global_rotation,
+	)
 	_history.append(entry)
 
 func _get_history_entry() -> HistoryEntry:
 	return _history[_read_index] if _read_index < len(_history) else null
 
 func read_history() -> UnpackedHistoryEntry:
-	var current_entry: HistoryEntry = _get_history_entry()
-	var timestamp = get_timestamp()
-	while current_entry and timestamp >= current_entry.timestamp:
+	var timestamp := Global.get_timestamp()
+	var prev_entry := _get_history_entry()
+	var next_entry := prev_entry
+	while next_entry and next_entry.timestamp <= timestamp:
 		_read_index += 1
-		current_entry = _get_history_entry()
-	var vel: Vector2 = Vector2.ZERO
-	var rot: float = global_rotation
-	if current_entry:
-		var delta_t = current_entry.timestamp - timestamp
-		vel = (current_entry.pos - global_position)/delta_t
-		# rot = (current_entry.rot - global_rotation)/delta_t # fehlerbehaftet
-		rot = current_entry.rot
+		prev_entry = next_entry
+		next_entry = _get_history_entry()
+	var vel := Vector2.ZERO
+	var rot := global_rotation
+	if prev_entry and next_entry:
+		var delta_t := next_entry.timestamp - timestamp
+		var t := (timestamp - prev_entry.timestamp) / delta_t
+		vel = (next_entry.pos - global_position) / delta_t
+		rot = (1.0 - t) * prev_entry.rot + t * next_entry.rot
 	return UnpackedHistoryEntry.new(vel, rot)
 
-func set_history(hist: Array [HistoryEntry]):
+func set_history(hist: Array[HistoryEntry]):
 	_history = hist
-func get_history() -> Array [HistoryEntry]:
+
+func get_history() -> Array[HistoryEntry]:
 	return _history
 
 class HistoryEntry:
@@ -62,7 +63,7 @@ class HistoryEntry:
 	var pos: Vector2
 	var rot: float
 	# var flag: int # for additional visual information (e.g.animation frame)
-	
+
 	func _init(_timestamp: float ,_pos: Vector2, _rot: float) -> void:
 		timestamp = _timestamp
 		pos = _pos
@@ -72,7 +73,7 @@ class UnpackedHistoryEntry:
 	var vel: Vector2
 	var rot: float
 	# var flag: int # for additional visual information (e.g.animation frame)
-	
+
 	func _init(_vel: Vector2, _rot: float) -> void:
 		vel = _vel
 		rot = _rot
