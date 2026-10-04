@@ -78,7 +78,7 @@ func _on_brumm_player_finished() -> void:
 	start_brumm()
 
 func _process(_delta: float) -> void:
-	brumm.volume_db = -INF if speed == 0.0 else (2.0 - 600.0 / speed)
+	brumm.volume_db = -INF if speed == 0.0 else 10.0
 
 func start_brumm() -> void:
 	brumm.stream = [BRUMM1, BRUMM2].pick_random()

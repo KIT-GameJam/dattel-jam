@@ -105,6 +105,7 @@ shape = SubResource("RectangleShape2D_64ceh")
 
 [node name="BrummPlayer" type="AudioStreamPlayer2D" parent="." unique_id=101978879]
 pitch_scale = 100.0
+bus = &"Motor"
 
 [node name="DeadlyArea" type="Area2D" parent="." unique_id=1838067024]
 collision_layer = 0
