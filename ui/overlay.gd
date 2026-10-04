@@ -21,16 +21,22 @@ func _ready() -> void:
 		add_child(debug_label)
 		debug_label.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
 
+func to_minimap(point: Vector2) -> Vector2:
+	return point * MIMAP_SCALE + MIMAP_OFF
+
 func sync_minimap(walze: Walze) -> void:
+	var level := Global.get_level()
 	var points := PackedVector2Array()
 	for i in range(walze.curve.point_count):
-		points.push_back(walze.to_global(walze.curve.get_point_position(i)) * MIMAP_SCALE + MIMAP_OFF)
+		points.push_back(to_minimap(walze.to_global(walze.curve.get_point_position(i))))
 	$MarginContainer/PanelContainer/SubViewport/Line2D.points = points
+	$MarginContainer/PanelContainer/SubViewport/FinishLine.global_position = to_minimap(level.goal.global_position)
+	$MarginContainer/PanelContainer/SubViewport/FinishLine.rotation = level.goal.global_rotation
 
 func _process(_delta: float) -> void:
 	var game := Global.get_game()
 	if game == null or game.player == null: return
-	$MarginContainer/PanelContainer/SubViewport/PlayerIndicator.global_position = game.player.global_position * MIMAP_SCALE + MIMAP_OFF
+	$MarginContainer/PanelContainer/SubViewport/PlayerIndicator.global_position = to_minimap(game.player.global_position)
 
 func sync_stage(stage: int) -> void:
 	var max_stages := Global.get_game().max_stages
