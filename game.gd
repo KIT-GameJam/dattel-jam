@@ -62,8 +62,6 @@ func _reload_level() -> void:
 		overlay.sync_stage(stage)
 		c.reset_read_index()
 
-	if win_screen != null:
-		win_screen.queue_free()
 	ready_ui = ready_scene.instantiate()
 	add_child(ready_ui)
 
@@ -97,6 +95,8 @@ func end_level(lost: bool = false) -> void:
 		max_stages = -1
 		win_screen = win_scene.instantiate()
 		add_child(win_screen)
+	else:
+		_reload_level()
 
 func game_over(msg: String = "") -> void:
 	game_over_message = msg
