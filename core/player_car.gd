@@ -5,7 +5,6 @@ const MAX_SPEED := 200.0
 const ROTATION_SPEED := 1.8
 const ACCEL := 50.0
 const SPEED_DOWN_FACTOR := 0.3
-const TURNING_MAX_SPEED_DAMP := 0.7
 const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
 const TIRE_ANGLE: float = deg_to_rad(30.0);
 const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")
@@ -15,7 +14,6 @@ const BRUMM2: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm2.ogg")
 @onready var tires: Array[Sprite2D] = [$Sprite2D/Tire, $Sprite2D/Tire2]
 @onready var brumm: AudioStreamPlayer2D = $BrummPlayer
 var speed := 0.0
-var is_turning := false
 var curr_tire_rot: int = 0
 var gas_pedal_factor := 1.0
 
@@ -32,16 +30,13 @@ func rotate_tire(rot: int) -> void:
 		tire.rotation = DEFAULT_ROTATION + rot * TIRE_ANGLE
 
 func process_input(delta: float) -> void:
-	is_turning = false
 	rotate_tire(0)
 	if Input.is_action_pressed("left"):
 		turn_left(ROTATION_SPEED * delta)
 		rotate_tire(-1)
-		is_turning = true
 	if Input.is_action_pressed("right"):
 		turn_right(ROTATION_SPEED * delta)
 		rotate_tire(1)
-		is_turning = true
 	if Input.is_action_pressed("up"):
 		gas_pedal_factor = 1.5
 	elif Input.is_action_pressed("down"):
@@ -57,8 +52,6 @@ func pausable_physics_process(delta: float) -> void:
 			ground_speed = area.drive_speed
 			break
 	var max_speed: float = ground_speed * MAX_SPEED * gas_pedal_factor
-	if is_turning:
-		max_speed *= TURNING_MAX_SPEED_DAMP
 	speed += ACCEL * delta
 	if speed >= max_speed:
 		# progressively speed down on max speed
