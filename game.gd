@@ -18,7 +18,7 @@ const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
 const traffic_light_scene: PackedScene = preload("res://ui/beep_boop.tscn")
 const game_over_scene: PackedScene = preload("res://ui/game_over_screen.tscn")
 const win_scene: PackedScene = preload("res://ui/win_screen.tscn")
-var max_stages: int = 1
+var max_stages: int = 3
 var level: Level
 var ready_ui: Node
 var traffic_light_ui: Node
