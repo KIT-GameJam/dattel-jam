@@ -8,7 +8,7 @@ var stage: int = 0:
 		stage = val
 		if overlay != null:
 			overlay.sync_stage(val)
-var max_stages = 3
+var lives := 2
 
 const level_scene: PackedScene = preload("res://core/level.tscn")
 const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
@@ -64,7 +64,10 @@ func start_race() -> void:
 	is_race_started = true
 
 func end_level() -> void:
-	if ready_ui or stage >= max_stages:
+	if lives <= 0:
+		# TODO: game over
+		Global.exit_game()
+	if ready_ui:
 		return
 	stage += 1
 	cars.pop_back()
@@ -75,8 +78,4 @@ func end_level() -> void:
 		level.remove_child(c)
 	player.queue_free()
 	cars.append(new_car)
-	if stage <= max_stages:
-		_reload_level()
-	else:
-		pass
-		# end_screen()
+	_reload_level()

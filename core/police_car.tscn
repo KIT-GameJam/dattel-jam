@@ -2,10 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_725iu"]
 [ext_resource type="Texture2D" uid="uid://bq8y0o0tddff6" path="res://assets/car_police.svg" id="2_7vr5m"]
+[ext_resource type="Shader" uid="uid://dcuqwfyualrwm" path="res://core/police_car_lights.gdshader" id="3_f3jys"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_725iu"]
 a = Vector2(-64, 0)
 b = Vector2(64, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4jq5w"]
+shader = ExtResource("3_f3jys")
+
+[sub_resource type="Gradient" id="Gradient_rul1k"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_plrnn"]
+gradient = SubResource("Gradient_rul1k")
+width = 1
 
 [node name="PoliceCar" unique_id=721211325 instance=ExtResource("1_725iu")]
 ghost_name = "Verkehrspolizei"
@@ -20,3 +32,8 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" index="0" unique_id=211625945]
 position = Vector2(0, -10)
 shape = SubResource("SegmentShape2D_725iu")
+
+[node name="Lights" type="Sprite2D" parent="." index="3" unique_id=356564473]
+material = SubResource("ShaderMaterial_4jq5w")
+scale = Vector2(77.833336, 77.833336)
+texture = SubResource("GradientTexture1D_plrnn")
