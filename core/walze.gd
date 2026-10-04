@@ -1,6 +1,6 @@
 extends Path2D
 
-@export var speed := 50.0
+@export var speed := 157.0
 
 @onready var follow: PathFollow2D = $PathFollow2D
 
@@ -12,6 +12,6 @@ func curve_ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not Global.is_race_started(): return
-	current_speed += delta * 50.0
+	current_speed += delta * 40.0
 	current_speed = min(speed, current_speed)
 	follow.progress += delta * current_speed

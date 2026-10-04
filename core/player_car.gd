@@ -5,7 +5,7 @@ const MAX_SPEED := 150.0
 const STAGE_SPEED_MODIFIER := 1.025
 const ROTATION_SPEED := 1.8
 const ACCEL := 60.0
-const SPEED_DOWN_FACTOR := 0.3
+const SPEED_DOWN_FACTOR := 0.2
 const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
 const TIRE_ANGLE: float = deg_to_rad(30.0);
 const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")
@@ -48,7 +48,7 @@ func process_input(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if !Global.is_race_started(): return
 	process_input(delta)
-	var ground_speed := 0.3
+	var ground_speed := 0.18
 	for area in detection_area.get_overlapping_areas():
 		if is_instance_of(area, Road):
 			ground_speed = area.drive_speed
