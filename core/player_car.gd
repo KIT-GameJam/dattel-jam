@@ -47,7 +47,7 @@ func process_input(delta: float) -> void:
 	elif Input.is_action_pressed("down"):
 		gas_pedal_factor = 0.7
 	else:
-		gas_pedal_factor = 1.0 
+		gas_pedal_factor = 1.0
 
 func pausable_physics_process(delta: float) -> void:
 	process_input(delta)
@@ -70,7 +70,9 @@ func pausable_physics_process(delta: float) -> void:
 
 func die() -> void:
 	# "sieht gut aus" - Jan
-	Global.get_game().end_level()
+	var game := Global.get_game()
+	game.lives -= 1
+	game.end_level()
 
 func _ready() -> void:
 	start_brumm()
