@@ -78,6 +78,7 @@ temp_reach_goal={
 
 2d_physics/layer_1="Road"
 2d_physics/layer_4="Deadlies"
+2d_physics/layer_5="Finish"
 
 [physics]
 
