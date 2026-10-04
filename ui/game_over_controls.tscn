@@ -24,9 +24,15 @@ fit_content = true
 autowrap_mode = 0
 custom_effects = [SubResource("RichTextEffect_4jq5w")]
 
+[node name="RestartButton" parent="." unique_id=274197061 instance=ExtResource("2_qx4qs")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
 [node name="BackToTitleButton" parent="." unique_id=1274416860 instance=ExtResource("2_qx4qs")]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit to Title Screen"
 
+[connection signal="on_click" from="RestartButton" to="." method="_on_restart_button_on_click"]
 [connection signal="on_click" from="BackToTitleButton" to="." method="_on_back_to_title_button_on_click"]
