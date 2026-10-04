@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bolfuu7xyvi1j"]
+
+[ext_resource type="Texture2D" uid="uid://gpdxvng17y7p" path="res://assets/oil.svg" id="1_v4nds"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plrnn"]
+radius = 62.008064
+
+[node name="OilPatch" type="Area2D" unique_id=14398782]
+scale = Vector2(0.1, 0.1)
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1859530450]
+texture = ExtResource("1_v4nds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1296101363]
+shape = SubResource("CircleShape2D_plrnn")

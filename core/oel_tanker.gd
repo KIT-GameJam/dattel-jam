@@ -1,6 +1,6 @@
 extends GhostCar
 
-const oil_scene: PackedScene = preload("res://core/mine.tscn")
+const oil_scene: PackedScene = preload("res://core/oil_patch.tscn")
 
 func _on_oil_timer_timeout() -> void:
 	if not Global.is_race_started(): return
