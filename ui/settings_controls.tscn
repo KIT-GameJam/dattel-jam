@@ -104,6 +104,28 @@ value = 1.0
 tick_count = 9
 ticks_on_borders = true
 
+[node name="Label3" type="Label" parent="GridContainer" unique_id=1893027416]
+layout_mode = 2
+text = "Music Volume:"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="GridContainer" unique_id=1402577839]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_default_cursor_shape = 10
+theme_override_constants/center_grabber = 1
+theme_override_constants/tick_offset = 2
+theme_override_icons/grabber = SubResource("GradientTexture2D_o4ehr")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture2D_e3i4t")
+theme_override_icons/tick = SubResource("GradientTexture2D_78l3n")
+theme_override_styles/slider = SubResource("StyleBoxFlat_84jkg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytwsf")
+max_value = 1.0
+step = 0.125
+value = 1.0
+tick_count = 9
+ticks_on_borders = true
+
 [node name="BackButton" parent="." unique_id=1274416860 instance=ExtResource("1_7hf41")]
 custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
@@ -114,4 +136,5 @@ shortcut_action = "pause"
 [connection signal="on_click" from="WindowModeButton" to="." method="_on_window_mode_button_on_click"]
 [connection signal="value_changed" from="GridContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="value_changed" from="GridContainer/MotorVolumeSlider" to="." method="_on_motor_volume_slider_value_changed"]
+[connection signal="value_changed" from="GridContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="on_click" from="BackButton" to="." method="_on_back_button_on_click"]
