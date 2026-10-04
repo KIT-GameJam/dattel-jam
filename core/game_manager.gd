@@ -32,8 +32,9 @@ func start() -> void:
 	current_game = game_scene.instantiate()
 	game_container.add_child(current_game)
 
-func pause() -> void:
-	pause_menu.show()
+func pause(show_menu: bool = true) -> void:
+	if show_menu:
+		pause_menu.show()
 	get_tree().paused = true
 
 func unpause() -> void:

@@ -13,6 +13,7 @@ var lives := 2
 const level_scene: PackedScene = preload("res://core/level.tscn")
 const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
 const traffic_light_scene: PackedScene = preload("res://ui/beep_boop.tscn")
+const game_over_scene: PackedScene = preload("res://ui/game_over_screen.tscn")
 var level: Level
 var ready_ui: Node
 var traffic_light_ui: Node
@@ -65,8 +66,8 @@ func start_race() -> void:
 
 func end_level() -> void:
 	if lives <= 0:
-		# TODO: game over
-		Global.exit_game()
+		game_over()
+		return
 	if ready_ui:
 		return
 	stage += 1
@@ -79,3 +80,7 @@ func end_level() -> void:
 	player.queue_free()
 	cars.append(new_car)
 	_reload_level()
+
+func game_over() -> void:
+	add_child(game_over_scene.instantiate())
+	Global.get_game_manager().pause(false)
