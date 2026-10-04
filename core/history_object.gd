@@ -11,7 +11,7 @@ func _ready() -> void:
 	if not uses_ghost_shader:
 		material = null
 
-func reset_read_index():
+func reset():
 	_read_index = 0
 
 func write_history():

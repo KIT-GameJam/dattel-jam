@@ -90,9 +90,7 @@ func _on_deadly_area_entered(area: Area2D) -> void:
 		var explosion: Explosion = BUMM.instantiate()
 		add_child(explosion)
 		speed = 0.0
-		
+
 	if area is Öl:
 		spin.play("öl")
 		speed *= 0.45;
-	
-	

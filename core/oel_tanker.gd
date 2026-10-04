@@ -11,3 +11,7 @@ func _on_oil_timer_timeout() -> void:
 	var patch: Node2D = oil_scene.instantiate()
 	Global.get_level().add_child(patch)
 	patch.global_position = global_position
+
+func reset() -> void:
+	super.reset()
+	oil_timer.stop()

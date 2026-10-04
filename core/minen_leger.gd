@@ -11,3 +11,7 @@ func _on_minen_timer_timeout() -> void:
 	var mine: Node2D = mine_scene.instantiate()
 	Global.get_level().add_child(mine)
 	mine.global_position = global_position
+
+func reset() -> void:
+	super.reset()
+	minen_timer.stop()

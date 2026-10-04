@@ -63,7 +63,7 @@ func _reload_level() -> void:
 		c.global_rotation = start_rot
 		level.add_child(c)
 		overlay.sync_stage(stage)
-		c.reset_read_index()
+		c.reset()
 
 	ready_ui = ready_scene.instantiate()
 	add_child(ready_ui)
