@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bct8dfk1u1ws6"]
+
+[ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_66m5k"]
+[ext_resource type="Script" uid="uid://bj6jnyqgbs8k6" path="res://core/oel_tanker.gd" id="2_4ptx7"]
+[ext_resource type="Texture2D" uid="uid://cvu0fw3akccwq" path="res://assets/oil-car.svg" id="3_66m5k"]
+
+[node name="OelTanker" unique_id=721211325 instance=ExtResource("1_66m5k")]
+script = ExtResource("2_4ptx7")
+ghost_name = "Broken Car"
+
+[node name="Sprite2D" parent="." index="1" unique_id=2103895134]
+texture = ExtResource("3_66m5k")
+
+[node name="OilTimer" type="Timer" parent="." index="2" unique_id=1583005482]
+wait_time = 3.5
+autostart = true
+
+[connection signal="timeout" from="OilTimer" to="." method="_on_oil_timer_timeout"]
