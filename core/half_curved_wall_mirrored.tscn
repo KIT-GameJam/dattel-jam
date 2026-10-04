@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ckbdranbfqqpv"]
+
+[ext_resource type="Texture2D" uid="uid://brydknt8xnqhy" path="res://assets/rand_half_curved_road_mirrored.svg" id="1_u5ni1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plrnn"]
+size = Vector2(70, 302.60693)
+
+[node name="HalfCurvedWall" type="StaticBody2D" unique_id=2040264841]
+scale = Vector2(0.12, 0.12)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1079408362]
+texture = ExtResource("1_u5ni1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=948707597]
+position = Vector2(-75, -108.333336)
+rotation = 0.5270894
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_plrnn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=368649387]
+position = Vector2(-166.66667, 116.66668)
+rotation = 0.28797933
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_plrnn")
