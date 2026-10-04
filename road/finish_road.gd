@@ -7,3 +7,7 @@ var active := false
 func _on_finish_line_body_entered(body: Node2D) -> void:
 	if active and body is PlayerCar:
 		Global.get_game().end_level()
+
+func _on_finish_line_body_exited(body: Node2D) -> void:
+	if body is PlayerCar:
+		active = true

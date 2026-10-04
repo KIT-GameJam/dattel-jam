@@ -32,3 +32,4 @@ position = Vector2(-25.5, 0)
 shape = SubResource("RectangleShape2D_64ceh")
 
 [connection signal="body_entered" from="FinishLine" to="." method="_on_finish_line_body_entered"]
+[connection signal="body_exited" from="FinishLine" to="." method="_on_finish_line_body_exited"]

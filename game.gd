@@ -41,6 +41,7 @@ func _process(_delta: float) -> void:
 func _reload_level() -> void:
 	if level:
 		level.queue_free()
+		await get_tree().process_frame
 	is_race_started = false
 	level = level_scene.instantiate()
 	add_child(level)
