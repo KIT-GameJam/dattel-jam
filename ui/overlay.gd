@@ -23,6 +23,7 @@ func sync_stage(stage: int) -> void:
 	stage_label.text = "Round " + str(stage + 1) + "/∞"
 
 func update_health(n: int) -> void:
+	n = 0
 	while heart_container.get_child_count() < n:
 		var rect := TextureRect.new()
 		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
