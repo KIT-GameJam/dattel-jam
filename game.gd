@@ -30,7 +30,7 @@ func _ready() -> void:
 	_reload_level()
 
 func _process(_delta: float) -> void:
-	if Global.DEBUG and not ready_ui and stage < max_stages and Input.is_action_just_pressed("temp_reach_goal"):
+	if Global.DEBUG and Input.is_action_just_pressed("temp_reach_goal"):
 		end_level()
 
 func _reload_level() -> void:
@@ -64,6 +64,8 @@ func start_race() -> void:
 	is_race_started = true
 
 func end_level() -> void:
+	if ready_ui or stage >= max_stages:
+		return
 	stage += 1
 	cars.pop_back()
 	next_ghost_car = ghost_car_scenes.pick_random().instantiate()

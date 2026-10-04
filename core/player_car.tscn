@@ -56,8 +56,9 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_jmafn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1496874864]
+position = Vector2(0, -30)
 ignore_rotation = false
-zoom = Vector2(10, 10)
+zoom = Vector2(6, 6)
 position_smoothing_speed = 25.0
 rotation_smoothing_enabled = true
 
@@ -71,3 +72,11 @@ pitch_scale = 100.0
 bus = &"Motor"
 
 [connection signal="finished" from="BrummPlayer" to="." method="_on_brumm_player_finished"]
+[node name="DeadlyArea" type="Area2D" parent="." unique_id=1838067024]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyArea" unique_id=1564226519]
+shape = SubResource("RectangleShape2D_tijfq")
+
+[connection signal="area_entered" from="DeadlyArea" to="." method="_on_deadly_area_entered"]

@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var container: Control = $VBoxContainer/TrafficLightContainer
 @onready var label: Label = $VBoxContainer/Label
 @onready var timer: Timer = $Timer
+@onready var beep: AudioStreamPlayer = $Beep
+@onready var beeeeeeeeeeep: AudioStreamPlayer = $Beeeeeeeeeeep
 var traffic_lights: Array[TrafficLight] = []
 var step := 0
 var is_done := false
@@ -23,10 +25,13 @@ func _next_level():
 		container.offset_transform_enabled = true
 		tween.tween_property(container, "offset_transform_scale:y", 0.0, 0.15)
 		tween.tween_callback(queue_free)
+		return
 	step += 1
 	if step <= len(traffic_lights):
+		beep.play()
 		traffic_lights[len(traffic_lights) - step].make_red()
 	else:
+		beeeeeeeeeeep.play()
 		for light in traffic_lights:
 			light.make_green()
 			Global.get_game().start_race()
