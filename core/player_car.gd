@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	write_history()
 	if Global.get_level().is_behind_walz(global_position):
-		die()
+		Global.get_game().game_over("Oh no la Policia")
 
 func die() -> void:
 	# "sieht gut aus" - Niklas

@@ -24,6 +24,10 @@ fit_content = true
 autowrap_mode = 0
 custom_effects = [SubResource("RichTextEffect_4jq5w")]
 
+[node name="Description" type="Label" parent="." unique_id=82120160]
+layout_mode = 2
+size_flags_horizontal = 4
+
 [node name="RestartButton" parent="." unique_id=274197061 instance=ExtResource("2_qx4qs")]
 layout_mode = 2
 size_flags_horizontal = 4
