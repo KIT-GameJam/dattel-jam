@@ -20,7 +20,9 @@ func _ready() -> void:
 		debug_label.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
 
 func sync_stage(stage: int) -> void:
-	stage_label.text = "Round " + str(stage + 1) + "/∞"
+	var max_stages := Global.get_game().max_stages
+	var max_text: String = "∞" if (max_stages == -1) else str(max_stages)
+	stage_label.text = "Round " + str(stage + 1) + "/" + max_text
 
 func update_health(n: int) -> void:
 	n = 0

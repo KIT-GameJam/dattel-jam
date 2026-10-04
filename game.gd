@@ -17,9 +17,12 @@ const level_scene: PackedScene = preload("res://core/level.tscn")
 const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
 const traffic_light_scene: PackedScene = preload("res://ui/beep_boop.tscn")
 const game_over_scene: PackedScene = preload("res://ui/game_over_screen.tscn")
+const win_scene: PackedScene = preload("res://ui/win_screen.tscn")
+var max_stages: int = 3
 var level: Level
 var ready_ui: Node
 var traffic_light_ui: Node
+var win_screen: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const ghost_car_scenes: Array[PackedScene] = [
 	preload("res://core/minen_leger.tscn"),
@@ -39,6 +42,8 @@ func _process(_delta: float) -> void:
 		end_level()
 
 func _reload_level() -> void:
+	if win_screen != null:
+		win_screen.queue_free()
 	if level:
 		level.queue_free()
 		await get_tree().process_frame
@@ -54,8 +59,11 @@ func _reload_level() -> void:
 		c.global_position = start_pos
 		c.global_rotation = start_rot
 		level.add_child(c)
+		overlay.sync_stage(stage)
 		c.reset_read_index()
 
+	if win_screen != null:
+		win_screen.queue_free()
 	ready_ui = ready_scene.instantiate()
 	add_child(ready_ui)
 
@@ -84,7 +92,11 @@ func end_level(lost: bool = false) -> void:
 		level.remove_child(c)
 	player.queue_free()
 	cars.append(new_car)
-	_reload_level()
+
+	if stage == max_stages:
+		max_stages = -1
+		win_screen = win_scene.instantiate()
+		add_child(win_screen)
 
 func game_over(msg: String = "") -> void:
 	game_over_message = msg

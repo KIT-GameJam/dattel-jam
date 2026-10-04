@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dn5n06jmqa8wq"]
+
+[ext_resource type="PackedScene" uid="uid://bi8ypnscaif16" path="res://ui/controls_container.tscn" id="1_wex7o"]
+[ext_resource type="PackedScene" uid="uid://bcixjjmma2gpx" path="res://ui/win_controls.tscn" id="2_wex7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrnn"]
+bg_color = Color(0, 0, 0, 0.30980393)
+corner_detail = 1
+
+[node name="WinScreen" type="CanvasLayer" unique_id=1281037412]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=435002864]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_plrnn")
+
+[node name="ControlsContainer" parent="PanelContainer" unique_id=765224759 instance=ExtResource("1_wex7o")]
+layout_mode = 2
+size_flags_horizontal = 4
+initial_controls_scene = ExtResource("2_wex7o")
