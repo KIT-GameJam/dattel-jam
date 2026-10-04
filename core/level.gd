@@ -9,6 +9,7 @@ var started_timestamping = false
 func _ready() -> void:
 	goal = find_children("*", "FinishRoad").get(0)
 	create_joined_path()
+	Global.get_game().overlay.sync_minimap(walz)
 
 func end_round():
 	pass
