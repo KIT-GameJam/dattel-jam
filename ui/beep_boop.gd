@@ -10,9 +10,6 @@ var step := 0
 var is_done := false
 
 func _ready() -> void:
-	if Global.DEBUG:
-		# reduce wait time in debug mode
-		timer.wait_time = 0.4
 	timer.start()
 	traffic_lights.assign(container.get_children())
 

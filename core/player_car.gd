@@ -2,13 +2,13 @@ class_name PlayerCar
 extends HistoryObject
 
 const MAX_SPEED := 150.0
-const STAGE_SPEED_MODIFIER := 1.12
+const STAGE_SPEED_MODIFIER := 1.025
 const ROTATION_SPEED := 1.8
 const ACCEL := 60.0
 const SPEED_DOWN_FACTOR := 0.3
 const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
 const TIRE_ANGLE: float = deg_to_rad(30.0);
-const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")        
+const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")
 
 
 const BRUMM2: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm2.ogg")
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	write_history()
 
 func die() -> void:
-	# "sieht gut aus" - Jan
+	# "sieht gut aus" - Niklas
 	var game := Global.get_game()
 	game.lives -= 1
 	game.end_level()

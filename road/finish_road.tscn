@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dbavv7xlx5yoe" path="res://assets/finish.svg" id="2_6abk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64ceh"]
-size = Vector2(8, 48)
+size = Vector2(8, 213)
 
 [node name="FinishRoad" unique_id=701535564 instance=ExtResource("1_i16jy")]
 script = ExtResource("2_2tswr")
@@ -28,7 +28,7 @@ collision_layer = 0
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine" index="0" unique_id=268902797]
-position = Vector2(-25.5, 0)
+position = Vector2(-25.5, 0.5)
 shape = SubResource("RectangleShape2D_64ceh")
 
 [connection signal="body_entered" from="FinishLine" to="." method="_on_finish_line_body_entered"]

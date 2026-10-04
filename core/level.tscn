@@ -48,7 +48,7 @@ sources/2 = SubResource("TileSetAtlasSource_nuv7q")
 sources/3 = SubResource("TileSetAtlasSource_pj88p")
 sources/4 = SubResource("TileSetAtlasSource_u2kg0")
 
-[sub_resource type="Curve2D" id="Curve2D_3wu0q"]
+[sub_resource type="Curve2D" id="Curve2D_nuv7q"]
 resource_local_to_scene = true
 
 [node name="Level" type="Node2D" unique_id=435221483]
@@ -124,7 +124,7 @@ position = Vector2(291, 175.00002)
 rotation = 0.7853982
 
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
-curve = SubResource("Curve2D_3wu0q")
+curve = SubResource("Curve2D_nuv7q")
 
 [node name="StraightRoad30" parent="." unique_id=1789909034 instance=ExtResource("3_v1dmi")]
 position = Vector2(153.00003, 781)
