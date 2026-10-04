@@ -20,7 +20,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"bumm",
-"speed": 20.0
+"speed": 5.0
 }]
 
 [node name="Explosion" type="Node2D" unique_id=210100478]
