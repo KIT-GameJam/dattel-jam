@@ -13,6 +13,10 @@ script = ExtResource("1_uusci")
 layout_mode = 2
 text = "Start Game"
 
+[node name="TutorialButton" parent="." unique_id=1584503093 instance=ExtResource("1_l4va8")]
+layout_mode = 2
+text = "Show Explanation"
+
 [node name="SettingsButton" parent="." unique_id=189580028 instance=ExtResource("1_l4va8")]
 layout_mode = 2
 text = "Settings"
@@ -24,5 +28,6 @@ size_flags_horizontal = 8
 text = "Exit"
 
 [connection signal="on_click" from="StartButton" to="." method="_on_start_button_on_click"]
+[connection signal="on_click" from="TutorialButton" to="." method="_on_tutorial_button_on_click"]
 [connection signal="on_click" from="SettingsButton" to="." method="_on_settings_button_on_click"]
 [connection signal="on_click" from="ExitButton" to="." method="_on_exit_button_on_click"]

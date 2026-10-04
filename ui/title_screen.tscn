@@ -18,6 +18,13 @@ anti_aliasing = false
 script = ExtResource("2_bor1v")
 metadata/_custom_type_script = "uid://djsakavgyhj32"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plrnn"]
+bg_color = Color(0, 0, 0, 0.827451)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
 [node name="TitleScreen" type="Control" unique_id=1268057368]
 layout_mode = 3
 anchors_preset = 15
@@ -89,4 +96,39 @@ autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 2
 
+[node name="Tutorial" type="PanelContainer" parent="." unique_id=1184545233]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_plrnn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial" unique_id=876803415]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial/VBoxContainer" unique_id=796680649]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="Tutorial/VBoxContainer/HBoxContainer" unique_id=198025809]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/VBoxContainer" unique_id=761120705]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Dies das Tutorial"
+fit_content = true
+
 [connection signal="meta_clicked" from="TopContainer/VBoxContainer/Footer/MarginContainer/FooterText" to="." method="_on_footer_text_meta_clicked"]
+[connection signal="pressed" from="Tutorial/VBoxContainer/HBoxContainer/Button" to="." method="toggle_tutorial"]

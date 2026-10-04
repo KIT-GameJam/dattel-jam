@@ -1,6 +1,6 @@
 extends Node
 
-const DEBUG: bool = true
+const DEBUG: bool = false
 
 func exit_game() -> void:
 	get_tree().quit()

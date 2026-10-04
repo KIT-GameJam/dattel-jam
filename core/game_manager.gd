@@ -6,6 +6,7 @@ const game_scene: PackedScene = preload("res://core/game.tscn")
 @onready var game_container: Node = $Game
 @onready var title_screen_canvas: CanvasLayer = $TitleScreenCanvas
 @onready var pause_menu: CanvasLayer = $PauseMenu
+@onready var title_screen: TitleScreen = $TitleScreenCanvas/TitleScreen
 
 var current_game: Game
 
@@ -46,3 +47,6 @@ func pause(show_menu: bool = true) -> void:
 func unpause() -> void:
 	pause_menu.hide()
 	get_tree().paused = false
+
+func toggle_tutorial() -> void:
+	title_screen.toggle_tutorial()
