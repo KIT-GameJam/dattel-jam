@@ -1,7 +1,7 @@
 extends Node2D
 class_name Level
 
-@onready var walz: Path2D = $Walze
+@onready var walz: Walze = $Walze
 var goal: FinishRoad
 var timestamp: float = 0.0
 var started_timestamping = false
@@ -50,6 +50,9 @@ func create_joined_path() -> void:
 		var p_out := sorted_positions[i_next] - pos
 		walz.curve.add_point(pos, p_in, p_out)
 	walz.curve_ready()
+
+func is_behind_walz(point: Vector2) -> bool:
+	return walz.is_behind_walz(point)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed_by_event("pause", event):

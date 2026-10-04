@@ -62,12 +62,14 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, -1).rotated(rotation) * speed
 	move_and_slide()
 	write_history()
+	if Global.get_level().is_behind_walz(global_position):
+		die()
 
 func die() -> void:
 	# "sieht gut aus" - Niklas
 	var game := Global.get_game()
 	game.lives -= 1
-	game.end_level()
+	game.end_level(true)
 
 func _ready() -> void:
 	start_brumm()
