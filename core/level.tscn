@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://7wefaklk8eo0" path="res://core/walze.tscn" id="7_ppale"]
 [ext_resource type="PackedScene" uid="uid://b321guvqpmj27" path="res://road/finish_road.tscn" id="8_b0hrx"]
 [ext_resource type="PackedScene" uid="uid://c0viw41w6fn8o" path="res://road/curved_road.tscn" id="11_setdq"]
+[ext_resource type="PackedScene" uid="uid://b1uwawg08cey7" path="res://core/straight_wall.tscn" id="12_nuv7q"]
+[ext_resource type="PackedScene" uid="uid://cbxusvw7dye5t" path="res://core/curved_wall.tscn" id="13_pj88p"]
+[ext_resource type="PackedScene" uid="uid://c11x8n6krmq77" path="res://core/half_curved_wall.tscn" id="14_u2kg0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1dmi"]
 texture = ExtResource("2_bhxwn")
@@ -45,7 +48,7 @@ sources/2 = SubResource("TileSetAtlasSource_nuv7q")
 sources/3 = SubResource("TileSetAtlasSource_pj88p")
 sources/4 = SubResource("TileSetAtlasSource_u2kg0")
 
-[sub_resource type="Curve2D" id="Curve2D_wsccs"]
+[sub_resource type="Curve2D" id="Curve2D_3wu0q"]
 resource_local_to_scene = true
 
 [node name="Level" type="Node2D" unique_id=435221483]
@@ -121,7 +124,7 @@ position = Vector2(291, 175.00002)
 rotation = 0.7853982
 
 [node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
-curve = SubResource("Curve2D_wsccs")
+curve = SubResource("Curve2D_3wu0q")
 
 [node name="StraightRoad30" parent="." unique_id=1789909034 instance=ExtResource("3_v1dmi")]
 position = Vector2(153.00003, 781)
@@ -332,3 +335,559 @@ scale = Vector2(-1, 1)
 [node name="StraightRoad10" parent="." unique_id=1964553838 instance=ExtResource("3_v1dmi")]
 position = Vector2(456, 433)
 rotation = 1.5707964
+
+[node name="StraightWall" parent="." unique_id=2040264841 instance=ExtResource("12_nuv7q")]
+position = Vector2(234.00002, 210.00002)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall2" parent="." unique_id=173492614 instance=ExtResource("12_nuv7q")]
+position = Vector2(279.00003, 255.00002)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall3" parent="." unique_id=1722875035 instance=ExtResource("12_nuv7q")]
+position = Vector2(324, 300)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="CurvedWall" parent="." unique_id=1450610550 instance=ExtResource("13_pj88p")]
+position = Vector2(349, 363)
+rotation = -3.9269907
+
+[node name="StraightWall4" parent="." unique_id=353963687 instance=ExtResource("12_nuv7q")]
+position = Vector2(325, 428)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall5" parent="." unique_id=700430393 instance=ExtResource("12_nuv7q")]
+position = Vector2(284, 477)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall6" parent="." unique_id=1052100565 instance=ExtResource("12_nuv7q")]
+position = Vector2(243, 526)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall7" parent="." unique_id=1664814498 instance=ExtResource("12_nuv7q")]
+position = Vector2(202, 575)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall8" parent="." unique_id=1470029431 instance=ExtResource("12_nuv7q")]
+position = Vector2(161, 624)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall9" parent="." unique_id=518833912 instance=ExtResource("12_nuv7q")]
+position = Vector2(120, 673)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall10" parent="." unique_id=1464510944 instance=ExtResource("12_nuv7q")]
+position = Vector2(79, 722)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall11" parent="." unique_id=1570379798 instance=ExtResource("12_nuv7q")]
+position = Vector2(38, 771)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall12" parent="." unique_id=1737684068 instance=ExtResource("12_nuv7q")]
+position = Vector2(-3, 820)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall13" parent="." unique_id=1844291217 instance=ExtResource("12_nuv7q")]
+position = Vector2(-44, 869)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall14" parent="." unique_id=1453399512 instance=ExtResource("12_nuv7q")]
+position = Vector2(-85, 918)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall15" parent="." unique_id=896965699 instance=ExtResource("12_nuv7q")]
+position = Vector2(-126, 967)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall16" parent="." unique_id=668408215 instance=ExtResource("12_nuv7q")]
+position = Vector2(-167, 1016)
+rotation = 0.6981317
+scale = Vector2(0.143, 0.143)
+
+[node name="CurvedWall2" parent="." unique_id=2143942072 instance=ExtResource("13_pj88p")]
+position = Vector2(-191, 1081.0001)
+rotation = -0.7853982
+
+[node name="StraightWall17" parent="." unique_id=1910170728 instance=ExtResource("12_nuv7q")]
+position = Vector2(-215.99997, 1107)
+rotation = 2.3090706
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall18" parent="." unique_id=1465757389 instance=ExtResource("12_nuv7q")]
+position = Vector2(-262.99997, 1064)
+rotation = 2.3090706
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall" parent="." unique_id=2062171311 instance=ExtResource("14_u2kg0")]
+position = Vector2(-292.99997, 1002.9999)
+rotation = -0.83077675
+
+[node name="StraightWall19" parent="." unique_id=70687069 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 951)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall20" parent="." unique_id=351989052 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313.00003, 886.99994)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall21" parent="." unique_id=271144901 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313.00003, 822.99994)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall22" parent="." unique_id=1009588015 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 758.99994)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall23" parent="." unique_id=1329723382 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 695)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall24" parent="." unique_id=60552743 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 631)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall25" parent="." unique_id=1835252052 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 566.99994)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall26" parent="." unique_id=1545288595 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313.00003, 503)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall27" parent="." unique_id=832437647 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 439)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall28" parent="." unique_id=953448802 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 374.99997)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall29" parent="." unique_id=22467307 instance=ExtResource("12_nuv7q")]
+position = Vector2(-313, 311)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall2" parent="." unique_id=1743610915 instance=ExtResource("14_u2kg0")]
+position = Vector2(-332, 258)
+rotation = 2.3561945
+
+[node name="StraightWall30" parent="." unique_id=642066704 instance=ExtResource("12_nuv7q")]
+position = Vector2(-358, 195.00002)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall31" parent="." unique_id=1347526380 instance=ExtResource("12_nuv7q")]
+position = Vector2(-513, 235.00002)
+rotation = 5.497787
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall3" parent="." unique_id=576699021 instance=ExtResource("14_u2kg0")]
+position = Vector2(-430.00006, 87.99998)
+rotation = -0.7766715
+
+[node name="HalfCurvedWall4" parent="." unique_id=169944816 instance=ExtResource("14_u2kg0")]
+position = Vector2(-423.99997, 35.000004)
+rotation = 0.0034906585
+
+[node name="HalfCurvedWall5" parent="." unique_id=611402663 instance=ExtResource("14_u2kg0")]
+position = Vector2(-384, 9.999996)
+rotation = 0.94596845
+
+[node name="StraightWall32" parent="." unique_id=1080390357 instance=ExtResource("12_nuv7q")]
+position = Vector2(-327.99997, -6.0000005)
+rotation = -1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall33" parent="." unique_id=406975569 instance=ExtResource("12_nuv7q")]
+position = Vector2(-264, -6)
+rotation = -1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall34" parent="." unique_id=342869562 instance=ExtResource("12_nuv7q")]
+position = Vector2(-200, -5.9999995)
+rotation = -1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall6" parent="." unique_id=1842262152 instance=ExtResource("14_u2kg0")]
+position = Vector2(-136, 14)
+rotation = 1.4049901
+
+[node name="StraightWall35" parent="." unique_id=1324805484 instance=ExtResource("12_nuv7q")]
+position = Vector2(-88, 31.000004)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall36" parent="." unique_id=1332099826 instance=ExtResource("12_nuv7q")]
+position = Vector2(-43, 76)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall37" parent="." unique_id=2015937223 instance=ExtResource("12_nuv7q")]
+position = Vector2(2, 121)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall38" parent="." unique_id=595619825 instance=ExtResource("12_nuv7q")]
+position = Vector2(46.999996, 166)
+rotation = -0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="CurvedWall3" parent="." unique_id=1625559381 instance=ExtResource("13_pj88p")]
+position = Vector2(110, 191)
+rotation = -2.3561945
+
+[node name="CurvedWall4" parent="." unique_id=294693238 instance=ExtResource("13_pj88p")]
+position = Vector2(183.99998, 193.99998)
+rotation = 0.87441
+
+[node name="StraightWall39" parent="." unique_id=1589121530 instance=ExtResource("12_nuv7q")]
+position = Vector2(338.00003, 122.00002)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall40" parent="." unique_id=1228514200 instance=ExtResource("12_nuv7q")]
+position = Vector2(383.00003, 167.00003)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall41" parent="." unique_id=1840294694 instance=ExtResource("12_nuv7q")]
+position = Vector2(428, 212)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall42" parent="." unique_id=396876751 instance=ExtResource("12_nuv7q")]
+position = Vector2(473, 257)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall7" parent="." unique_id=119115793 instance=ExtResource("14_u2kg0")]
+position = Vector2(500.00003, 320.00003)
+rotation = 2.3561945
+
+[node name="StraightWall43" parent="." unique_id=328814174 instance=ExtResource("12_nuv7q")]
+position = Vector2(518.99994, 373)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall44" parent="." unique_id=39295746 instance=ExtResource("12_nuv7q")]
+position = Vector2(518.99994, 436.99997)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall8" parent="." unique_id=926859536 instance=ExtResource("14_u2kg0")]
+position = Vector2(494, 499.99997)
+rotation = 3.1415927
+
+[node name="StraightWall45" parent="." unique_id=1866795799 instance=ExtResource("12_nuv7q")]
+position = Vector2(470.99997, 551.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall46" parent="." unique_id=1011279765 instance=ExtResource("12_nuv7q")]
+position = Vector2(426.00003, 596.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall47" parent="." unique_id=729633798 instance=ExtResource("12_nuv7q")]
+position = Vector2(381, 641.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall48" parent="." unique_id=31253743 instance=ExtResource("12_nuv7q")]
+position = Vector2(336.00003, 686.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall49" parent="." unique_id=391731167 instance=ExtResource("12_nuv7q")]
+position = Vector2(291, 731.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall50" parent="." unique_id=1883059116 instance=ExtResource("12_nuv7q")]
+position = Vector2(246.00003, 776.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall51" parent="." unique_id=1561585186 instance=ExtResource("12_nuv7q")]
+position = Vector2(200.99998, 821.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall52" parent="." unique_id=1972264454 instance=ExtResource("12_nuv7q")]
+position = Vector2(156, 866.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall53" parent="." unique_id=2106412298 instance=ExtResource("12_nuv7q")]
+position = Vector2(111.000015, 911.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall54" parent="." unique_id=774589926 instance=ExtResource("12_nuv7q")]
+position = Vector2(66, 956.00006)
+rotation = 3.9269907
+scale = Vector2(0.143, 0.143)
+
+[node name="CurvedWall5" parent="." unique_id=497562472 instance=ExtResource("13_pj88p")]
+position = Vector2(40, 1020)
+rotation = -0.7853982
+
+[node name="HalfCurvedWall9" parent="." unique_id=1148528274 instance=ExtResource("14_u2kg0")]
+position = Vector2(46.99994, 1101)
+rotation = 2.3561945
+
+[node name="StraightWall55" parent="." unique_id=909762505 instance=ExtResource("12_nuv7q")]
+position = Vector2(67, 1154)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall56" parent="." unique_id=1329823186 instance=ExtResource("12_nuv7q")]
+position = Vector2(67, 1218)
+rotation = 3.1415927
+scale = Vector2(0.143, 0.143)
+
+[node name="CurvedWall6" parent="." unique_id=1535838674 instance=ExtResource("13_pj88p")]
+position = Vector2(40.000004, 1281.0001)
+rotation = 3.1415927
+
+[node name="StraightWall57" parent="." unique_id=1832824902 instance=ExtResource("12_nuv7q")]
+position = Vector2(-23.000008, 1308)
+rotation = 4.712389
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall58" parent="." unique_id=1686083811 instance=ExtResource("12_nuv7q")]
+position = Vector2(-86.99999, 1308)
+rotation = 4.712389
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall59" parent="." unique_id=1459996666 instance=ExtResource("12_nuv7q")]
+position = Vector2(-151, 1308)
+rotation = 4.712389
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall60" parent="." unique_id=148651212 instance=ExtResource("12_nuv7q")]
+position = Vector2(-215, 1308)
+rotation = 4.712389
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall10" parent="." unique_id=874070123 instance=ExtResource("14_u2kg0")]
+position = Vector2(-279, 1283)
+rotation = -1.5707964
+
+[node name="StraightWall61" parent="." unique_id=187298848 instance=ExtResource("12_nuv7q")]
+position = Vector2(-329.99994, 1259.9999)
+rotation = 5.497787
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall62" parent="." unique_id=1428735857 instance=ExtResource("12_nuv7q")]
+position = Vector2(-374.99988, 1215)
+rotation = 5.497787
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall63" parent="." unique_id=723175748 instance=ExtResource("12_nuv7q")]
+position = Vector2(-419.9999, 1169.9999)
+rotation = 5.497787
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall11" parent="." unique_id=1812516402 instance=ExtResource("14_u2kg0")]
+position = Vector2(-447.00003, 1108.0001)
+rotation = -0.7853982
+
+[node name="StraightWall64" parent="." unique_id=1596793308 instance=ExtResource("12_nuv7q")]
+position = Vector2(-465.99997, 1054.9999)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall65" parent="." unique_id=1719120643 instance=ExtResource("12_nuv7q")]
+position = Vector2(-466, 990.9999)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall66" parent="." unique_id=1906019660 instance=ExtResource("12_nuv7q")]
+position = Vector2(-466, 927)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall67" parent="." unique_id=530891394 instance=ExtResource("12_nuv7q")]
+position = Vector2(-465.99997, 862.99994)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall68" parent="." unique_id=1041500979 instance=ExtResource("12_nuv7q")]
+position = Vector2(-466, 798.99994)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall69" parent="." unique_id=1261736309 instance=ExtResource("12_nuv7q")]
+position = Vector2(-466, 734.99994)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall70" parent="." unique_id=652655378 instance=ExtResource("12_nuv7q")]
+position = Vector2(-465.99997, 671)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall71" parent="." unique_id=103178689 instance=ExtResource("12_nuv7q")]
+position = Vector2(-466, 606.99994)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall72" parent="." unique_id=2107630021 instance=ExtResource("12_nuv7q")]
+position = Vector2(-465.99997, 543)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall73" parent="." unique_id=450215982 instance=ExtResource("12_nuv7q")]
+position = Vector2(-465.99997, 479)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall74" parent="." unique_id=424076115 instance=ExtResource("12_nuv7q")]
+position = Vector2(-466, 414.99994)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall75" parent="." unique_id=1757301334 instance=ExtResource("12_nuv7q")]
+position = Vector2(-465.99994, 351)
+rotation = 6.2831855
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall12" parent="." unique_id=159526908 instance=ExtResource("14_u2kg0")]
+position = Vector2(-486.00003, 298.00003)
+rotation = 2.3561945
+
+[node name="StraightWall76" parent="." unique_id=1596964276 instance=ExtResource("12_nuv7q")]
+position = Vector2(-558, 190)
+rotation = 5.497787
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall77" parent="." unique_id=734010593 instance=ExtResource("12_nuv7q")]
+position = Vector2(-403, 150.00003)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall78" parent="." unique_id=1631202354 instance=ExtResource("12_nuv7q")]
+position = Vector2(-602.99994, 145.00003)
+rotation = 5.497787
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall13" parent="." unique_id=970126460 instance=ExtResource("14_u2kg0")]
+position = Vector2(-630, 82.00001)
+rotation = -0.7766715
+
+[node name="HalfCurvedWall14" parent="." unique_id=912978361 instance=ExtResource("14_u2kg0")]
+position = Vector2(-628, 27.000004)
+rotation = -0.12217305
+
+[node name="StraightWall79" parent="." unique_id=487558305 instance=ExtResource("12_nuv7q")]
+position = Vector2(-608, -24)
+rotation = 0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall80" parent="." unique_id=1249323606 instance=ExtResource("12_nuv7q")]
+position = Vector2(-563.00006, -69.000046)
+rotation = 0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall81" parent="." unique_id=443791281 instance=ExtResource("12_nuv7q")]
+position = Vector2(-518.00006, -114.000015)
+rotation = 0.7853982
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall15" parent="." unique_id=91898448 instance=ExtResource("14_u2kg0")]
+position = Vector2(-455, -141.00002)
+rotation = 0.7853982
+
+[node name="StraightWall82" parent="." unique_id=1482726487 instance=ExtResource("12_nuv7q")]
+position = Vector2(-402, -161)
+rotation = 1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall83" parent="." unique_id=275507195 instance=ExtResource("12_nuv7q")]
+position = Vector2(-338, -160.99998)
+rotation = 1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall84" parent="." unique_id=1515176908 instance=ExtResource("12_nuv7q")]
+position = Vector2(-274, -160.99998)
+rotation = 1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall85" parent="." unique_id=394920875 instance=ExtResource("12_nuv7q")]
+position = Vector2(-210.00002, -161)
+rotation = 1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall86" parent="." unique_id=1548042388 instance=ExtResource("12_nuv7q")]
+position = Vector2(-145.99995, -160.99998)
+rotation = 1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall16" parent="." unique_id=859160592 instance=ExtResource("14_u2kg0")]
+position = Vector2(-80.00001, -140.99998)
+rotation = 1.4049901
+
+[node name="StraightWall87" parent="." unique_id=70146953 instance=ExtResource("12_nuv7q")]
+position = Vector2(-29.000004, -123)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall88" parent="." unique_id=1102726077 instance=ExtResource("12_nuv7q")]
+position = Vector2(15.999996, -78)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall89" parent="." unique_id=362679307 instance=ExtResource("12_nuv7q")]
+position = Vector2(61, -33)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall17" parent="." unique_id=1991809040 instance=ExtResource("14_u2kg0")]
+position = Vector2(112, -8.999996)
+rotation = -1.5707964
+
+[node name="StraightWall90" parent="." unique_id=1768676643 instance=ExtResource("12_nuv7q")]
+position = Vector2(175, 15.999998)
+rotation = 1.5707964
+scale = Vector2(0.143, 0.143)
+
+[node name="HalfCurvedWall18" parent="." unique_id=845780166 instance=ExtResource("14_u2kg0")]
+position = Vector2(232, 41.000004)
+rotation = 1.5707964
+
+[node name="StraightWall91" parent="." unique_id=483483009 instance=ExtResource("12_nuv7q")]
+position = Vector2(282, 64)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
+
+[node name="StraightWall92" parent="." unique_id=1771738231 instance=ExtResource("12_nuv7q")]
+position = Vector2(327, 108.999985)
+rotation = 2.3561945
+scale = Vector2(0.143, 0.143)
