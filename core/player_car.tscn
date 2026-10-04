@@ -58,7 +58,7 @@ texture = ExtResource("3_jmafn")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1496874864]
 position = Vector2(0, -30)
 ignore_rotation = false
-zoom = Vector2(6, 6)
+zoom = Vector2(4, 4)
 position_smoothing_speed = 25.0
 rotation_smoothing_enabled = true
 
