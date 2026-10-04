@@ -22,7 +22,7 @@ var ready_ui: Node
 var traffic_light_ui: Node
 const player_scene: PackedScene = preload("res://core/player_car.tscn")
 const ghost_car_scenes: Array[PackedScene] = [
-	preload("res://core/minen_leger.tscn"),
+	preload("res://core/ghost_car.tscn"),
 ]
 var player: HistoryObject
 var cars: Array [HistoryObject] = []
@@ -68,8 +68,8 @@ func _start_level() -> void:
 func start_race() -> void:
 	is_race_started = true
 
-func end_level() -> void:
-	if lives <= 0:
+func end_level(lost: bool = false) -> void:
+	if lost:
 		game_over()
 		return
 	if ready_ui:

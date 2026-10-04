@@ -27,6 +27,8 @@ func _next_level():
 		tween.tween_callback(queue_free)
 		return
 	step += 1
+	if step >= len(traffic_lights) - Global.get_stage()*1.25:
+		Global.start_timestamping()
 	if step <= len(traffic_lights):
 		beep.play()
 		traffic_lights[len(traffic_lights) - step].make_red()

@@ -1,13 +1,16 @@
 class_name PlayerCar
 extends HistoryObject
 
-const MAX_SPEED := 200.0
+const MAX_SPEED := 150.0
+const STAGE_SPEED_MODIFIER := 1.12
 const ROTATION_SPEED := 1.8
-const ACCEL := 50.0
+const ACCEL := 60.0
 const SPEED_DOWN_FACTOR := 0.3
 const DEFAULT_ROTATION: float = deg_to_rad(-90.0);
 const TIRE_ANGLE: float = deg_to_rad(30.0);
-const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")
+const BRUMM1: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm1.ogg")        
+
+
 const BRUMM2: AudioStreamOggVorbis = preload("res://assets/sfx/BrummBrumm2.ogg")
 
 @onready var detection_area: Area2D = $DetectionArea
@@ -37,21 +40,20 @@ func process_input(delta: float) -> void:
 	if Input.is_action_pressed("right"):
 		turn_right(ROTATION_SPEED * delta)
 		rotate_tire(1)
-	if Input.is_action_pressed("up"):
-		gas_pedal_factor = 1.5
-	elif Input.is_action_pressed("down"):
-		gas_pedal_factor = 0.7
+	if Input.is_action_pressed("down"):
+		gas_pedal_factor = 0.6
 	else:
 		gas_pedal_factor = 1.0
 
-func pausable_physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	if !Global.is_race_started(): return
 	process_input(delta)
 	var ground_speed := 0.3
 	for area in detection_area.get_overlapping_areas():
 		if is_instance_of(area, Road):
 			ground_speed = area.drive_speed
 			break
-	var max_speed: float = ground_speed * MAX_SPEED * gas_pedal_factor
+	var max_speed: float = ground_speed * MAX_SPEED * gas_pedal_factor * pow(STAGE_SPEED_MODIFIER, Global.get_stage())
 	speed += ACCEL * delta
 	if speed >= max_speed:
 		# progressively speed down on max speed

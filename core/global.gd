@@ -17,6 +17,13 @@ func get_level() -> Level:
 func get_timestamp() -> float:
 	return get_level().get_timestamp()
 
+func is_race_started() -> bool:
+	return get_game().is_race_started
+func start_timestamping():
+	get_level().start_timestamping()
+func get_stage():
+	return get_game().stage
+
 func pause():
 	get_game_manager().pause()
 func unpause():
