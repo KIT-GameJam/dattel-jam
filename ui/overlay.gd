@@ -1,7 +1,10 @@
 class_name Overlay
 extends CanvasLayer
 
+const heart_img: Texture2D = preload("res://assets/heart.svg")
+
 @onready var stage_label: Label = $HBoxContainer/StageLabel
+@onready var heart_container: Control = $HBoxContainer/HeartContainer
 
 func _ready() -> void:
 	sync_stage(0)
@@ -18,3 +21,13 @@ func _ready() -> void:
 
 func sync_stage(stage: int) -> void:
 	stage_label.text = "Round " + str(stage + 1) + "/∞"
+
+func update_health(n: int) -> void:
+	while heart_container.get_child_count() < n:
+		var rect := TextureRect.new()
+		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		rect.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+		rect.texture = heart_img
+		heart_container.add_child(rect)
+	while heart_container.get_child_count() > n:
+		heart_container.remove_child(heart_container.get_child(0))

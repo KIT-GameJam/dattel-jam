@@ -8,7 +8,10 @@ var stage: int = 0:
 		stage = val
 		if overlay != null:
 			overlay.sync_stage(val)
-var lives := 2
+var lives := 2:
+	set(new_lives):
+		lives = new_lives
+		overlay.update_health(new_lives)
 
 const level_scene: PackedScene = preload("res://core/level.tscn")
 const ready_scene: PackedScene = preload("res://ui/ready_ui.tscn")
@@ -29,6 +32,7 @@ var next_ghost_car: GhostCar = null
 
 func _ready() -> void:
 	_reload_level()
+	overlay.update_health(lives)
 
 func _process(_delta: float) -> void:
 	if Global.DEBUG and Input.is_action_just_pressed("temp_reach_goal"):

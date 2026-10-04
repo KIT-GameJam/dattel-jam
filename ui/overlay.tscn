@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://g1s6vg5w25v7"]
 
 [ext_resource type="Script" uid="uid://bnwam8wktl3kr" path="res://ui/overlay.gd" id="1_fvwlh"]
+[ext_resource type="Texture2D" uid="uid://by4l81ei2o36c" path="res://assets/heart.svg" id="2_1mp40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2arr"]
 content_margin_left = 4.0
@@ -22,6 +23,16 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 alignment = 2
+
+[node name="HeartContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=780509147]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HeartContainer" unique_id=201235994]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_1mp40")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="StageLabel" type="Label" parent="HBoxContainer" unique_id=1781008144]
 layout_mode = 2
