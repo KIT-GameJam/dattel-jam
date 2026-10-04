@@ -71,3 +71,11 @@ pitch_scale = 100.0
 bus = &"Motor"
 
 [connection signal="finished" from="BrummPlayer" to="." method="_on_brumm_player_finished"]
+[node name="DeadlyArea" type="Area2D" parent="." unique_id=1838067024]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyArea" unique_id=1564226519]
+shape = SubResource("RectangleShape2D_tijfq")
+
+[connection signal="area_entered" from="DeadlyArea" to="." method="_on_deadly_area_entered"]

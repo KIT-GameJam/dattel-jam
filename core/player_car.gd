@@ -62,9 +62,8 @@ func pausable_physics_process(delta: float) -> void:
 	write_history()
 
 func die() -> void:
-	# Keiner:
-	# Niklas: "sieht gut aus"
-	Global.get_level().end_round()
+	# "sieht gut aus" - Jan
+	Global.get_game().end_level()
 
 func _ready() -> void:
 	start_brumm()
@@ -79,3 +78,6 @@ func start_brumm() -> void:
 	brumm.stream = [BRUMM1, BRUMM2].pick_random()
 	brumm.pitch_scale = 0.6 + speed * 0.006 + randf_range(-0.05, 0.05)
 	brumm.play()
+
+func _on_deadly_area_entered(_area: Area2D) -> void:
+	die.call_deferred()

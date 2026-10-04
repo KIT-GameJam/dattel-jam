@@ -1,25 +1,22 @@
-[gd_scene format=3 uid="uid://4kb4vrhpxp2x"]
+[gd_scene format=3 uid="uid://bkfj5g04xwaqu"]
 
-[ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_bswkx"]
-[ext_resource type="Script" uid="uid://bqsie7q7qiwh5" path="res://core/police_car.gd" id="2_h61j7"]
-[ext_resource type="Texture2D" uid="uid://bq8y0o0tddff6" path="res://assets/car_police.svg" id="3_f3jys"]
+[ext_resource type="PackedScene" uid="uid://b3ykhry6s6m7d" path="res://core/ghost_car.tscn" id="1_725iu"]
+[ext_resource type="Texture2D" uid="uid://bq8y0o0tddff6" path="res://assets/car_police.svg" id="2_7vr5m"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_64ceh"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_725iu"]
 a = Vector2(-64, 0)
 b = Vector2(64, 0)
 
-[node name="PoliceCar" unique_id=721211325 instance=ExtResource("1_bswkx")]
-script = ExtResource("2_h61j7")
+[node name="PoliceCar" unique_id=721211325 instance=ExtResource("1_725iu")]
 ghost_name = "Verkehrspolizei"
-uses_ghost_shader = null
 
 [node name="Sprite2D" parent="." index="1" unique_id=2103895134]
-texture = ExtResource("3_f3jys")
+texture = ExtResource("2_7vr5m")
 
-[node name="Barrier" type="Area2D" parent="." index="2" unique_id=1255066029]
+[node name="Barrier" type="Area2D" parent="." index="2" unique_id=807912216]
+collision_layer = 8
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" index="0" unique_id=44566510]
-position = Vector2(0, -10.666666)
-shape = SubResource("SegmentShape2D_64ceh")
-
-[connection signal="body_entered" from="Barrier" to="." method="_on_barrier_collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" index="0" unique_id=211625945]
+position = Vector2(0, -10)
+shape = SubResource("SegmentShape2D_725iu")

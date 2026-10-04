@@ -9,13 +9,6 @@ func _ready() -> void:
 	goal = find_children("*", "FinishRoad").get(0)
 	create_joined_path()
 
-func _find_start_road() -> Road:
-	var query := PhysicsPointQueryParameters2D.new()
-	query.position = goal.global_position
-	query.collide_with_areas = true
-	query.collide_with_bodies = false
-	return get_world_2d().direct_space_state.intersect_point(query)[0]["collider"]
-
 func end_round():
 	pass
 
@@ -29,14 +22,13 @@ func get_start_position() -> Vector3:
 	return Vector3(goal.start_marker.global_position.x, goal.start_marker.global_position.y, goal.global_rotation)
 
 func create_joined_path() -> void:
-	var start_road := _find_start_road()
 	var roads: Array[Road] = []
 	for road: Road in find_children("*", "Road"):
-		if road != start_road:
+		if road != goal:
 			roads.append(road)
 
 	var sorted_positions := PackedVector2Array()
-	sorted_positions.append(start_road.global_position)
+	sorted_positions.append(goal.global_position)
 	while not roads.is_empty():
 		var last_pos := sorted_positions[-1]
 		var min_dist := INF
