@@ -1,7 +1,7 @@
 class_name PlayerCar
 extends HistoryObject
 
-const MAX_SPEED := 85.0
+const MAX_SPEED := 200.0
 const ROTATION_SPEED := 1.8
 const ACCEL := 50.0
 const SPEED_DOWN_FACTOR := 0.3
