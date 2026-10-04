@@ -123,9 +123,6 @@ rotation = 0.7853982
 position = Vector2(291, 175.00002)
 rotation = 0.7853982
 
-[node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
-curve = SubResource("Curve2D_nuv7q")
-
 [node name="StraightRoad30" parent="." unique_id=1789909034 instance=ExtResource("3_v1dmi")]
 position = Vector2(153.00003, 781)
 rotation = 2.3561945
@@ -891,3 +888,6 @@ scale = Vector2(0.143, 0.143)
 position = Vector2(327, 108.999985)
 rotation = 2.3561945
 scale = Vector2(0.143, 0.143)
+
+[node name="Walze" parent="." unique_id=1203039655 instance=ExtResource("7_ppale")]
+curve = SubResource("Curve2D_nuv7q")

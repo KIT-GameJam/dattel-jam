@@ -16,9 +16,6 @@ shader = ExtResource("2_0srvd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwiga"]
 size = Vector2(8, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_864xc"]
-size = Vector2(182, 20)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ep8i"]
 shader = ExtResource("5_uiwrv")
 
@@ -56,13 +53,6 @@ use_parent_material = true
 rotation = -1.5707964
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("4_un426")
-
-[node name="Barrier" type="Area2D" parent="PathFollow2D/Area2D" unique_id=1775052538]
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D/Barrier" unique_id=1328092862]
-shape = SubResource("RectangleShape2D_864xc")
 
 [node name="Lights" type="Sprite2D" parent="PathFollow2D/Area2D" unique_id=688640078]
 material = SubResource("ShaderMaterial_4ep8i")
