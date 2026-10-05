@@ -7,6 +7,8 @@
 
 [node name="MinenLeger" unique_id=721211325 instance=ExtResource("1_i8xdt")]
 script = ExtResource("2_jxhgj")
+min_time = 3.0
+max_time = 4.0
 ghost_name = "Minenleger"
 
 [node name="Sprite2D" parent="." index="1" unique_id=2103895134]

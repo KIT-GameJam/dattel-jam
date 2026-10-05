@@ -6,6 +6,8 @@
 
 [node name="OelTanker" unique_id=721211325 instance=ExtResource("1_66m5k")]
 script = ExtResource("2_4ptx7")
+min_time = 3.0
+max_time = 4.0
 ghost_name = "Broken Car"
 
 [node name="Sprite2D" parent="." index="1" unique_id=2103895134]
